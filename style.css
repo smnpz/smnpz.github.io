@@ -1,0 +1,84 @@
+body {
+    background: linear-gradient(to top, #512DA8, #3498DB);
+    overflow-x: hidden; /*Rimuove la barra di scorrimento orizzontale*/
+}
+
+footer {
+    background-color: #3498DB;
+    text-align: center;
+    color: #fff;
+    padding: 10px;
+    font-size: 14px;
+}
+
+.section {
+    border-radius: 25px;
+}
+
+p {
+    color: black;
+}
+
+.navbar {
+    background-color: #673AB7;
+    border-radius: 25px;
+    margin: 1%;
+}
+
+.centered-container {
+    text-align: center;
+    
+}
+  
+
+.main-text {
+    color: black;
+    font-size: 36px;
+    font-weight: bold;
+    margin-bottom: 10px;
+}
+
+.sub-text {
+    color: black;
+    font-size: 25px;
+}
+
+.paragraph {
+    padding: 15px;
+    background-color:white;
+    border-radius: 25px;
+    text-align: justify;
+    margin-bottom: 3%;
+    margin-right: 3%; 
+    margin-left: 3%; 
+}
+
+.news {
+    padding: 15px;
+    margin-right: 3%; 
+    margin-left: 3%; 
+    background-color:white;
+    border-radius: 25px;
+    text-align: justify;
+    margin-bottom: 3%;
+}
+
+.news-date {
+    font-size: medium;
+    color: darkgray;
+}
+
+.danger {
+    padding: 15px;
+    margin-right: 3%; 
+    margin-left: 3%; 
+    background-color:white;
+    border-radius: 25px;
+    text-align: justify;
+    margin-bottom: 3%;
+}
+
+.icon {
+    width: 25px;
+    height: 25px;
+}
