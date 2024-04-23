@@ -1,84 +1,96 @@
 body {
-    background: linear-gradient(to top, #512DA8, #3498DB);
-    overflow-x: hidden; /*Rimuove la barra di scorrimento orizzontale*/
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    display: flex;
 }
 
-footer {
-    background-color: #3498DB;
-    text-align: center;
-    color: #fff;
-    padding: 10px;
-    font-size: 14px;
+#sidebar {
+    background-color: teal;
+    color: white;
+    width: 17%;
+    height: 100vh;
+    padding: 20px;
+    position: fixed; 
 }
 
-.section {
-    border-radius: 25px;
+#sidebar img {
+    padding-top: 30px;
+    width: 170px;
+    height: 160px;
+    border-radius: 50%;
 }
 
-p {
-    color: black;
+#sidebar ul {
+    list-style-type: none;
+    padding: 0;
 }
 
-.navbar {
-    background-color: #673AB7;
-    border-radius: 25px;
-    margin: 1%;
+#sidebar ul li {
+    padding: 10px 0;
 }
 
-.centered-container {
-    text-align: center;
-    
-}
-  
+/* Contenuto principale HOME*/
 
-.main-text {
-    color: black;
-    font-size: 36px;
-    font-weight: bold;
-    margin-bottom: 10px;
+#main {
+    width: 80%;
+    padding: 20px;
+    margin-left: 17%;
+    margin-top: 8%;
 }
 
-.sub-text {
-    color: black;
-    font-size: 25px;
+#main h1 {
+    margin-top: 0;
 }
 
-.paragraph {
-    padding: 15px;
-    background-color:white;
-    border-radius: 25px;
+#main p {
+    line-height: 1.6;
+}
+
+.teal {
+    color: teal;
+}
+
+.teal-bg {
+    color: white;
+    background-color: teal;
+}
+
+.title {
+    font-family:Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+    font-size: xxx-large;
+}
+
+.sub-title {
+    font-family:Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+    font-size: xxx-large;
+}
+
+.main-desc {
+    font-family:Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+    font-size: x-large;
     text-align: justify;
-    margin-bottom: 3%;
-    margin-right: 3%; 
-    margin-left: 3%; 
 }
 
-.news {
-    padding: 15px;
-    margin-right: 3%; 
-    margin-left: 3%; 
-    background-color:white;
-    border-radius: 25px;
-    text-align: justify;
-    margin-bottom: 3%;
+/*Sezione ABOUT*/
+
+#about {
+    padding-top: 200px;
 }
 
-.news-date {
-    font-size: medium;
-    color: darkgray;
+.table-font {
+    font-family:Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
 }
 
-.danger {
-    padding: 15px;
-    margin-right: 3%; 
-    margin-left: 3%; 
-    background-color:white;
-    border-radius: 25px;
-    text-align: justify;
-    margin-bottom: 3%;
+/*Sezione PROJECTS*/
+
+#projects {
+    padding-top: 50px;
 }
 
-.icon {
-    width: 25px;
-    height: 25px;
+/*Sezione SKILLS*/
+
+#skills {
+    padding-top: 50px;
 }
+
