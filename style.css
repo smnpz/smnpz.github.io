@@ -1,9 +1,32 @@
 body {
+    background-color:aliceblue;
+}
+
+
+main {
+    margin-left: 17%;
     font-family: Arial, sans-serif;
     margin: 0;
     padding: 0;
     display: flex;
 }
+
+footer {
+    margin-left: 17%;
+    margin-bottom: auto;
+    color: white;
+    background-color: teal;
+    font-family: Arial, sans-serif;
+}
+
+
+a {
+    text-decoration: none;
+    color: teal;
+}
+
+
+/* Sezione Sidebar */
 
 #sidebar {
     background-color: teal;
@@ -32,18 +55,18 @@ body {
 
 /* Contenuto principale HOME*/
 
-#main {
+#home {
     width: 80%;
     padding: 20px;
     margin-left: 17%;
     margin-top: 8%;
 }
 
-#main h1 {
+#home h1 {
     margin-top: 0;
 }
 
-#main p {
+#home p {
     line-height: 1.6;
 }
 
@@ -66,7 +89,7 @@ body {
     font-size: xxx-large;
 }
 
-.main-desc {
+.home-desc {
     font-family:Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
     font-size: x-large;
     text-align: justify;
@@ -94,3 +117,44 @@ body {
     padding-top: 50px;
 }
 
+/*Sezione EDUCATION*/
+
+#education {
+    padding-top: 50px;
+}
+
+.timeline-with-icons {
+    margin-left: 3%;
+    border-left: 1px solid hsl(0, 0%, 90%);
+    position: relative;
+    list-style: none;
+}
+
+.timeline-with-icons .timeline-item {
+    position: relative;
+}
+
+.timeline-with-icons .timeline-item:after {
+    position: absolute;
+    display: block;
+    top: 0;
+}
+
+.timeline-with-icons .timeline-icon {
+    position: absolute;
+    left: -48px;
+    background-color: hsl(217, 88.2%, 90%);
+    color: teal;
+    border-radius: 50%;
+    height: 31px;
+    width: 31px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+/*Sezione RESUME*/
+
+#resume {
+    padding-top: 50px;
+}

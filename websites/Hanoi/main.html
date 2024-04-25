@@ -1,0 +1,340 @@
+<!DOCTYPE html>
+<html lang="it">
+<head>
+    <title>La Torre di Hanoi</title>
+    <link rel="icon" type="image/png" href="favicon.png">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">
+    <link rel="stylesheet" href="mystyle.css">
+    <style>
+        body {
+            background-color: aquamarine;
+            background-size: 100%;
+        }
+        .disk {
+            height: 30px;
+            margin: 0 auto;
+        }
+        .win-overlay {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-color: rgba(0, 0, 0, 0.5);
+            display: none;
+            justify-content: center;
+            align-items: center;
+        }
+        .win-message {
+            color: yellow;
+            font-size: 24px;
+            text-align: center;
+        }
+
+        .icon {
+            max-width: 30px;
+            max-height: 30px;
+        }
+
+        .align {
+            font-size: x-large;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <center><h1>LA TORRE DI HANOI</h1></center><br><br>
+    </header>
+    <main>
+        <div class="container">
+            <div class="row">
+                <div id="pole1" class="col-4">						
+                </div>
+                <div id="pole2" class="col-4">
+                </div>
+                <div id="pole3" class="col-4">
+                </div>
+            </div>
+            <div class="row" style="margin-top:20px;">
+                <div class="col-4">
+                    <center><button id="btn1" class="btn btn-primary" onclick="actionPole(1)">Prendi</button></center>
+                </div>
+                <div class="col-4">
+                    <center><button id="btn2" class="btn btn-primary" onclick="actionPole(2)">Prendi</button></center>
+                </div>
+                <div class="col-4">
+                    <center><button id="btn3" class="btn btn-primary" onclick="actionPole(3)">Prendi</button></center>
+                </div>
+            </div>
+            <div class="row">
+                <center>
+                <div class="col-4"></div>
+                <div id="myHand" class="col-4" style="padding: 30px;"></div>
+                <div class="col-4"></div>
+                </center>
+            </div>
+            <div class="row" style="margin-top:20px;">
+				<div class="col-4">
+					<center><button id="resetBtn" class="btn btn-dark" onclick="resetGame()">Reset Game</button></center>
+				</div>
+				<div class="col-4">
+					<center><button id="addDiskBtn" class="btn btn-info" onclick="addDisk()">Aggiungi Disco</button></center>
+				</div>
+				<div class="col-4">
+					<center><button id="removeDiskBtn" class="btn btn-info" onclick="removeDisk()">Rimuovi Disco</button></center>
+				</div>
+			</div>
+            <br><br>
+            <div class="row">
+                <div class="col-4">
+                    <center><button id="toggleTimerButton" class="btn btn-warning" onclick="toggleTimer()">Avvia Timer</button></center>
+                </div>
+                <div class="col-4 align">
+                    <center>
+                        <img src="timer.png" class = "icon ">
+                        <p id="timerDisplay">00:00</p>
+                    </center>
+                </div>
+                <div class="col-4 align">
+                    <center>
+                        <img src="mossa.png" class = "icon">
+                        <p>Mosse: <span id="moveCounter">0</span></p>
+                    </center>
+                </div>
+            </div>
+            <br><br>
+            <div class="row">
+                <div class="col-4 align">
+                    <a href="start.html"><button class="btn btn-primary">Torna alla Home</button></a>
+                </div>
+                <div class="col-4 align">
+                    <center><button id="autowin" class="btn btn-success" onclick="wingame()">Vinci il Gioco</button></center>
+                </div>
+                <div class="col-4 align"></div>
+            </div>
+            <div class="win-overlay" id="winOverlay">
+                <div class="win-message" id="winMessage">
+                    <center><img src="winner.jpg" alt = "vittoria"><br>
+                    <b><u>COMPLIMENTI, HAI VINTO!</u></b> <br>
+                    Ecco le tue statistiche: <br>
+                    <b>Mosse usate</b>: <span id="winMoveCounter"></span> <br>
+                    <b>Tempo impiegato</b>: <span id="winTimerDisplay"></span><br>
+                    <button class="btn btn-primary" onclick = "resetGame()">Gioca di nuovo!</button>
+                </center>
+                </div>
+            </div>
+        </div>
+    </main>
+    <br><br>
+    <footer>
+        <center><p>&copy; Simone Potenza</p></center>
+    </footer>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL" crossorigin="anonymous"></script>
+    <script>
+        var pole1 = [1,2,3,4];
+        var pole2 = [];
+        var pole3 = [];
+        var mano = 0;
+        var moves = 0;
+        var timerInterval;
+        var seconds = 0;
+        var minutes = 0;
+        var totDischi = pole1.length;
+
+        drawScene();
+
+        function drawScene(){
+            drawPoles();
+            drawHand();
+            checkButtons();
+        }
+
+        function drawPoles(){
+            for(let i=1;i<4;i++){
+                drawPole(getPole(i), getDivPole(i));
+            }
+        }
+
+        function getDivPole(n){
+            return document.getElementById("pole"+n);
+        }
+
+        function drawPole(pole, div){
+            div.innerHTML = "";
+            for(let i=0; i<pole.length; i++){
+                div.innerHTML+=drawDisk(pole[i]);
+            }
+        }
+
+        function checkButtons(){
+            for(let i=1;i<4;i++)
+                checkButton(i);
+        }	
+
+        function getPole(n){
+            switch(n){
+                case 1: return pole1;
+                case 2: return pole2;
+                case 3: return pole3;
+            }
+        }
+
+        function checkButton(n){
+            let button = document.getElementById("btn" + n);
+            let pole = getPole(n);
+            if(mano==0){
+                button.innerText = "Prendi";
+                button.disabled = pole.length == 0;
+            } else {
+                button.innerText = "Metti";				
+                button.disabled = pole.length > 0 ? pole[0] < mano : false;			
+            }
+        }
+
+        function drawHand(){
+            let handDiv = document.getElementById("myHand");
+            handDiv.innerHTML = drawDisk(mano);
+        }
+
+        function actionPole(n){
+            if(mano==0){
+                mano = getPole(n).shift();
+                startTimer();
+            } else {
+                getPole(n).unshift(mano);
+                mano = 0;
+                moves++;
+                document.getElementById("moveCounter").innerText = moves;
+                checkWinCondition();
+            }
+            drawScene();
+        }
+
+        function getColor(dimension){
+            let color = "#000000";
+            switch(dimension){
+                case 1:
+				case 5:
+				case 9:
+					color = "#FF0000"; break;
+				case 2:
+				case 6:
+				case 10:
+					color = "#0000FF"; break;		
+				case 3:
+				case 7:
+					color = "#00FF00"; break;
+				case 4:
+				case 8:
+					color = "#FF7000"; break;
+            }
+            return color;
+        }
+
+        function drawDisk(dimension){
+            let color = getColor(dimension);
+            return '<div class="disk" style="background-color:'+color+'; width:'+dimension*10+'%;"></div>';
+        }
+
+        function startTimer() {
+            if (!timerInterval) {
+                timerInterval = setInterval(updateTimer, 1000);
+                document.getElementById("toggleTimerButton").innerText = "Stop Timer";
+
+
+            }
+        }
+
+        function stopTimer() {
+            clearInterval(timerInterval)
+            timerInterval = null;
+            document.getElementById("toggleTimerButton").innerText = "Start Timer";
+        }
+
+        function toggleTimer() {
+            if (timerInterval) {
+                stopTimer();
+            } else {
+                startTimer();
+            }
+        }
+
+        function updateTimer() {
+            seconds++;
+            if (seconds === 60) {
+                seconds = 0;
+                minutes++;
+            }
+            document.getElementById("timerDisplay").innerText =  (minutes < 10 ? "0" + minutes : minutes) + ":" + (seconds < 10 ? "0" + seconds : seconds);
+        }
+
+        function checkWinCondition() {
+            if (pole3.length == totDischi || pole2.length == totDischi) {
+                stopTimer();
+                showWinMessage();
+            }
+        }
+
+        function wingame() {
+            pole3 = pole1
+            pole1 =  []
+            pole2 = []
+            checkWinCondition()
+            drawScene()
+        }
+
+        function showWinMessage() {
+            document.getElementById("winOverlay").style.display = "flex";
+            document.getElementById("winMoveCounter").innerText = moves;
+            document.getElementById("winTimerDisplay").innerText = minutes + ":" + seconds;
+        }
+
+        function unshowWin() {
+            document.getElementById("winOverlay").style.display = "none";
+        }
+
+
+        function addDisk() {
+			if (pole1.length < 10 && pole2.length == 0 && pole3.length == 0 && mano == 0) {
+				var size = pole1.length + 1;
+				pole1.push(size);
+				drawScene();
+				totDischi = pole1.length;
+			}
+            else showErrorPopup()
+		}
+
+		function removeDisk() {
+			if (pole1.length > 2 && pole2.length == 0 && pole3.length == 0 && mano == 0) {
+				pole1.pop();
+				drawScene();
+				totDischi = pole1.length;
+			}
+            else showErrorPopup()
+		}
+
+
+        function resetGame(){
+            unshowWin()
+			pole1 = [1,2,3,4];
+			pole2 = [];
+			pole3 = [];
+			mano = 0;
+			moves = 0;
+            minutes = 0;
+            seconds = 0;
+            stopTimer()
+            document.getElementById("timerDisplay").innerText = "00:00";
+			document.getElementById("moveCounter").innerText = moves;
+			drawScene();
+            window.alert("Tutti i dati sono stati ripristinati.")
+		}
+
+        function showErrorPopup() {
+            window.alert("Mi spiace! Il numero dei dischi può essere modificato solo all'inizio del game e dev'essere compreso tra 2 e 10.");
+        }   
+
+
+    </script>
+</body>
+</html>

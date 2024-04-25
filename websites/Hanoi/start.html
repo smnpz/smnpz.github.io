@@ -1,0 +1,130 @@
+<!DOCTYPE html>
+<html lang="it">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Benvenuto alla Torre di Hanoi</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">
+    <link rel="stylesheet" href="mystyle.css">
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-image: url(bg.jpg);
+            background-repeat: no-repeat;
+            background-size: 100%;
+            margin: 0;
+            padding: 0;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            min-height: 100vh; /* Modificato il valore da 'height' a 'min-height' */
+        }
+        .container {
+            text-align: center;
+        }
+        h1 {
+            color: black;
+        }
+        
+        .button {
+            background-color: #4caf50;
+            color: white;
+            padding: 15px 32px;
+            text-align: center;
+            text-decoration: none;
+            display: inline-block;
+            font-size: 16px;
+            margin-top: 20px;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            transition: background-color 0.3s;
+        }
+        .button:hover {
+            background-color: #45a049;
+        }
+        footer {
+            width: 100%;
+            position: fixed;
+            bottom: 0;
+
+            text-align: center;
+            padding: 10px 0;
+        }
+    </style>
+</head>
+<body>
+    <main>
+        <div class="container">
+            <h1 id="title">TORRE DI HANOI</h1>
+            <p id="description" style="color: black;">Un gioco classico di logica e strategia.<br><br><i>Cosa vuoi fare?</i></p><br>
+            <a id="guidaLink" href="guida.html"><button class="btn btn-primary">Guida al Gioco</button></a> <a id="gameLink" href="main.html"><button class="btn btn-success">Inizia a Giocare</button></a><br><br>
+            <label for="menu"><b>Seleziona la lingua:</b></label>
+            <select id="menu" name="menu">
+                <option value="Italiano">Italiano</option>
+                <option value="English">English</option>
+            </select>
+        </div>
+    </main>
+
+    <footer>
+        <center><p>&copy; Simone Potenza</p></center>
+    </footer>
+
+    <script>
+        // Funzione che gestisce l'evento di cambiamento del menu a tendina
+        document.getElementById("menu").addEventListener("change", function() {
+            // Ottieni il valore selezionato nel menu a tendina
+            var selectedOption = this.value;
+            
+            // Seleziona i link da variare
+            var guidaLink = document.getElementById("guidaLink");
+            var gameLink = document.getElementById("gameLink");
+
+            // Variabile che conterrà il nuovo URL del link in base all'opzione selezionata
+            var new_guida;
+            var new_game;
+
+            // Variabile che conterrà il nuovo testo del link in base all'opzione selezionata
+            var guidaText;
+            var gameText;
+
+            // Variabili che conterranno i nuovi testi per l'h1 e il paragrafo
+            var titleText;
+            var descriptionText;
+
+            // Assegna un URL diverso e un testo diverso a seconda dell'opzione selezionata
+            switch (selectedOption) {
+                case "Italiano":
+                    new_guida = "guida.html";
+                    new_game = "main.html";
+                    guidaText = "Guida al Gioco";
+                    gameText = "Inizia a Giocare";
+                    titleText = "TORRE DI HANOI";
+                    descriptionText = "Un gioco classico di logica e strategia.<br><br><i>Cosa vuoi fare?</i>";
+                    break;
+                case "English":
+                    new_guida = "en_guida.html";
+                    new_game = "en_main.html";
+                    guidaText = "Game Guide";
+                    gameText = "Start Playing";
+                    titleText = "TOWER OF HANOI";
+                    descriptionText = "A classic game of logic and strategy.<br><br><i>What do you want to do?</i>";
+                    break;
+            }
+
+            // Aggiorna l'attributo href dei link con i nuovi URL
+            guidaLink.href = new_guida;
+            gameLink.href = new_game;
+
+            // Aggiorna il testo dei pulsanti
+            guidaLink.innerHTML = '<button class="btn btn-primary">' + guidaText + '</button>';
+            gameLink.innerHTML = '<button class="btn btn-success">' + gameText + '</button>';
+
+            // Aggiorna il testo dell'h1 e del paragrafo
+            document.getElementById("title").innerHTML = titleText;
+            document.getElementById("description").innerHTML = descriptionText;
+        });
+    </script>
+</body>
+</html>

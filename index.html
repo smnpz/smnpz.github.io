@@ -9,30 +9,34 @@
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossorigin="anonymous"></script>
 </head>
 <body>
+  <main>
     <div id="sidebar">
+        <center>Simone Potenza<br>Portfolio</center>
         <img src="Simone.jpg" alt="Profile Picture">
         <br><br>
         <ul>
-            <a href="#main" style="text-decoration: none; color: white;"><li><i class="fas fa-home"></i> Home</li></a>
+            <a href="#home" style="text-decoration: none; color: white;"><li><i class="fas fa-home"></i> Home</li></a>
             <a href="#about" style="text-decoration: none; color: white;"><li><i class="fas fa-user"></i> Chi sono?</li></a>
             <a href="#projects" style="text-decoration: none; color: white;"><li><i class="fas fa-project-diagram"></i> Progetti</li></a>
             <a href="#skills" style="text-decoration: none; color: white;"><li><i class="fas fa-cogs"></i> Skills</li></a>
-            <a href="#about" style="text-decoration: none; color: white;"><li><i class="fas fa-graduation-cap"></i> Formazione</li></a>
-            <a href="#about" style="text-decoration: none; color: white;"><li><i class="fas fa-envelope"></i> Contatti</li></a>
-            <a href="#about" style="text-decoration: none; color: white;"><li><i class="fas fa-file-alt"></i> Riassunto & CV</li></a>
+            <a href="#education" style="text-decoration: none; color: white;"><li><i class="fas fa-graduation-cap"></i> Formazione</li></a>
+            <a href="#contacts" style="text-decoration: none; color: white;"><li><i class="fas fa-envelope"></i> Contatti</li></a>
+            <a href="#resume" style="text-decoration: none; color: white;"><li><i class="fas fa-file-alt"></i> Riassunto & CV</li></a>
         </ul>
+        <br><br>
+        <p>&copy; Simone Potenza 2024</p>
     </div>
-    <div id="main">
+    <div id="home">
         <h1 class="title">Ciao, sono <span class="teal">Simone Potenza</span>!</h1>
         <h1 class="sub-title">Un <span id="dynamic-text" class="teal"></span>.</h1>
 
-        <p class="main-desc"><br>Mi chiamo <span class="teal">Simone Potenza</span>, uno studente di informatica in continua formazione personale.<br>Questo sito è il mio <span class="teal">Portfolio</span>, o se preferisci <span class="teal">Devfolio</span>, è quello di raccogliere lo storico della mia carriera da sviluppatore, al fine di rendere pubblici tutti i miei progetti. Per qualsisi domanda, non esitare a contattarmi!</p>
+        <p class="home-desc"><br>Mi chiamo <span class="teal">Simone Potenza</span>, uno studente di informatica in continua formazione personale.<br>Questo sito è il mio <span class="teal">Portfolio</span>, conosciuto anche come <span class="teal">Devfolio</span>. Il suo scopo è quello di raccogliere lo storico della mia carriera da sviluppatore, al fine di rendere pubblici tutti i miei progetti e traguardi. Per qualsisi domanda, non esitare a <a href="#contacts">contattarmi</a>!</p>
         
         <!-- Sezione Su di me #about -->
         <div id="about">
             <h1 class="title"><span class="teal"><i class="fas fa-user"></i> Chi sono?</span> Mi presento...</h1>
                 <br>
-                <table class="table table-font">
+                <table class="table-font table">
                   <thead>
                     <tr>
                         <th scope="col" class="teal">Informazioni</th>
@@ -72,7 +76,7 @@
 
         <div id="projects">
             <h1 class="title"><span class="teal"><i class="fas fa-project-diagram"></i> Progetti</span> che ho realizzato</h1>
-            <br><br>
+            <br>
             <div class="row">
                 <div class="col-sm-6 mb-3 mb-sm-0">
                     <div class="card">
@@ -82,7 +86,7 @@
                         <div class="card-body">
                           <h5 class="card-title">Controllo Input</h5>
                           <p class="card-text">Una classe di Java che consente di limitare gli errori di input da tastiera.</p>
-                          <a href="#" class="btn teal-bg">Vai su GitHub!</a>
+                          <a href="https://github.com/smnpz/Java-Utilities" class="btn teal-bg">Vai su GitHub!</a>
                         </div>
                     </div>
                 </div>
@@ -95,7 +99,7 @@
                         <div class="card-body">
                           <h5 class="card-title">Torre di Hanoi</h5>
                           <p class="card-text">Una sito web interattivo per giocare al famoso gioco della Torre di Hanoi.</p>
-                          <a href="#" class="btn teal-bg">Vai al Sito Web!</a>
+                          <a href="websites/Hanoi/main.html" class="btn teal-bg">Vai al Sito Web!</a>
                         </div>
                     </div>
                 </div>
@@ -110,7 +114,7 @@
                         <div class="card-body">
                           <h5 class="card-title">Cyber Security</h5>
                           <p class="card-text">Un sito web che mette in guardia i lettori su alcuni errori che spesso possiamo commettere su internet.</p>
-                          <a href="#" class="btn teal-bg">Vai al Sito Web!</a>
+                          <a href="websites/Sicurezza informatica/index.html" class="btn teal-bg">Vai al Sito Web!</a>
                         </div>
                     </div>
                 </div>
@@ -118,7 +122,7 @@
                 <div class="col-sm-6">
                     <div class="card">
                         <div class="card-header teal-bg">
-                          Realizzato in Python <span class="badge text-bg-warning">Manutenzione</span>
+                          Realizzato in Python <span class="badge text-bg-warning">Manutenzione in corso</span>
                         </div>
                         <div class="card-body">
                           <h5 class="card-title">Group Rating</h5>
@@ -136,20 +140,110 @@
                           Realizzato in Python <span class="badge text-bg-success">Online</span>
                         </div>
                         <div class="card-body">
-                          <h5 class="card-title">Player Network Help</h5>
-                          <p class="card-text">Un Bot Telegram realizzato per <a href="https://t.me/PlayersNetwork" style="text-decoration: none; color: teal;">Players Network</a> che consente di contattare lo staff, inviare suggerimenti e candidarsi come moderatore.</p>
+                          <h5 class="card-title">Players Network Help</h5>
+                          <p class="card-text">Un Bot Telegram realizzato per <a href="https://t.me/PlayersNetwork" style="text-decoration: none; color: teal;">Players Network</a> che consente di ricevere autonomamente informazioni sul proprio stato, contattare lo staff, inviare suggerimenti, candidarsi come moderatore e altro ancora.</p>
                           <a href="https://t.me/PlayersNetworkBot" class="btn teal-bg">Vai su Telegram!</a>
                         </div>
                     </div>
                 </div>
+                <br>
+                <div class="col-sm-6">
+                    <div class="card">
+                        <div class="card-header teal-bg">
+                          Realizzato in Java <span class="badge text-bg-dark">Beta privata</span>
+                        </div>
+                        <div class="card-body">
+                          <h5 class="card-title">Form Maker</h5>
+                          <p class="card-text">Un'applicazione realizzata in Java che consente di creare e svolgere questionari. Tutti i questionari sono realizzabili gratuitamente e cosentono di personalizzare al meglio ogni dettaglio.</p>
+                          <!-- Pulsante per aprire il popup di errore -->
+                          <button type="button" class="btn teal-bg" data-bs-toggle="modal" data-bs-target="#errorModal">Vai su GitHub!</button>
+
+                          <!-- Modal del popup di errore -->
+                          <div class="modal fade" id="errorModal" tabindex="-1" aria-labelledby="errorModalLabel" aria-hidden="true">
+                              <div class="modal-dialog">
+                                  <div class="modal-content">
+                                      <div class="modal-header">
+                                          <h5 class="modal-title" id="errorModalLabel">Beta non pubblicata!</h5>
+                                          <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                                      </div>
+                                      <div class="modal-body">
+                                          Spiacenti, al momento non è possibile accedere alla versione Beta di questo progetto.
+                                      </div>
+                                      <div class="modal-footer">
+                                          <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Chiudi</button>
+                                      </div>
+                                  </div>
+                              </div>
+                          </div>
+                        </div>
+                    </div>
+                </div>
             </div>
+            <br>
+            <div class="row">
+              <div class="col-sm-6">
+                  <div class="card">
+                      <div class="card-header teal-bg">
+                        Realizzato su Unity <span class="badge text-bg-dark">Beta in revisione</span>
+                      </div>
+                      <div class="card-body">
+                        <h5 class="card-title">Anacronauta</h5>
+                        <p class="card-text">Un videogioco fantascientifico il cui scopo è ripristinare lo spazio-tempo in seguito ad una catastrofica esplosione che ha frammentato l'Italia in epoche differenti in conflitto tra loro.</p>
+                        
+                        <div class="row">
+                          <div class="col-sm-6">
+                            <a href="https://www.youtube.com/watch?v=wDISil_1o-E&t=1s" class="btn teal-bg">Vai su YouTube!</a>
+                          </div>
+                          <div class="col-sm-6">
+                            <button type="button" class="btn teal-bg" data-bs-toggle="modal" data-bs-target="#anacronauta_info">Maggiori informazioni</button>
+                          </div>
+                          
+                        </div>
+
+                        <!-- Modal -->
+                        <div class="modal fade" id="anacronauta_info" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1" aria-labelledby="staticBackdropLabel" aria-hidden="true">
+                          <div class="modal-dialog modal-xl">
+                            <div class="modal-content">
+                              <div class="modal-header">
+                                <h1 class="modal-title fs-5" id="staticBackdropLabel"><b>Anacronauta</b></h1>
+                                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                              </div>
+                              <div class="modal-body">
+                                <i>Realizzato su Unity </i><span class="badge text-bg-dark">Beta in revisione</span><br><br>
+                                <p style="text-align: justify;">
+                                  In un futuro pseudo-odierno, devastato dal cambiamento climatico e dalle guerre, il mondo si trova sull'orlo del collasso. Le risorse scarseggiano, i disastri ambientali sono all'ordine del giorno e i contatti con l'esterno sono ridotti al minimo. In un disperato tentativo di sopravvivenza, viene commissionato un macchinario per il viaggio nel tempo, concepito per recuperare risorse vitali dal passato. Nel frattempo, un team di coraggiosi scienziati viene inviato in esplorazione oltre i confini della regione, sperando di trovare una soluzione. <br><br>
+                              
+                                  Il protagonista, uno di questi scienziati, ritorna alla base dopo un'esplorazione estenuante, solo per trovarsi di fronte a un mondo sconvolto e distorto. Senza rendersene conto, la macchina del tempo ha subito un malfunzionamento catastrofico, generando una sorta di bolla temporale che ha mescolato epoche e personaggi storici, creando uno scenario geopolitico caotico e surreale. <br><br>
+                              
+                                  Guidato dagli appunti sparsi del "professore", il protagonista si imbarca in un viaggio per comprendere ciò che è accaduto e per riparare la macchina, al fine di riportare la regione alla normalità. Lungo il cammino, dovrà reclutare abili inventori e raccogliere materiali preziosi, mentre esplora ambienti ricchi di storia e segreti. <br><br>
+                              
+                                  La missione si evolve in una corsa contro il tempo, dove ogni passo avvicina il protagonista alla verità nascosta dietro il misterioso incidente temporale. Solo completando la ricostruzione del macchinario e attivandolo, il protagonista scoprirà che il suo gesto ha un impatto irreversibile sulla linea temporale originale, dando inizio a un ciclo infinito di eventi. <br><br>
+                              
+                                  Solo coloro che intraprenderanno un nuovo viaggio attraverso il gioco, sbloccando il True Ending in una New Game Plus, avranno la possibilità di spezzare il ciclo e porre fine alla distorsione temporale che minaccia il mondo.
+                                </p>
+                                <div class="ratio ratio-16x9">
+                                  <iframe src="https://www.youtube.com/embed/wDISil_1o-E" title="YouTube video" allowfullscreen></iframe>
+                                </div>                                                          
+                              </div>
+                              <div class="modal-footer">
+                                <button type="button" class="btn teal-bg" data-bs-dismiss="modal">Chiudi</button>
+                              </div>
+                            </div>
+                          </div>
+                        </div>
+
+
+                      </div>
+                  </div>
+              </div>
+          </div>
         </div>
 
         <!-- Sezione Skills #skills -->
 
         <div id = "skills">
             <h1 class="title"><span class="teal"><i class="fas fa-cogs"></i> Skills</span> che possiedo</h1>
-            <br><br>
+            <br>
 
             <div class="accordion" id="skills-sections">
                 <div class="accordion-item">
@@ -277,10 +371,36 @@
                   <div class="accordion-item">
                     <h2 class="accordion-header">
                       <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#panelsStayOpen-collapseFive" aria-expanded="false" aria-controls="panelsStayOpen-collapseThree">
-                          <span class="teal"><i class="fas fa-lightbulb"></i>  Ulteriori Skills</span>
+                          <span class="teal"><i class="fa fa-desktop"></i>  Sistemi Operativi</span>
                       </button>
                     </h2>
                     <div id="panelsStayOpen-collapseFive" class="accordion-collapse collapse">
+                      <div class="accordion-body">
+                          <p>Ecco i database che conosco con il relativo livello: </p>
+  
+                          <p><b>Windows</b></p>
+                          <div class="progress" role="progressbar" aria-label="Animated striped example" aria-valuenow="100" aria-valuemin="0" aria-valuemax="100">
+                            <div class="progress-bar progress-bar-striped progress-bar-animated" style="width: 80%"></div>
+                          </div>
+    
+                          <br>
+                          
+                          <p><b>Android</b></p>
+                          <div class="progress" role="progressbar" aria-label="Animated striped example" aria-valuenow="100" aria-valuemin="0" aria-valuemax="100">
+                            <div class="progress-bar progress-bar-striped progress-bar-animated" style="width: 80%"></div>
+                          </div>
+
+                      </div>
+                    </div>
+                  </div>
+
+                  <div class="accordion-item">
+                    <h2 class="accordion-header">
+                      <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#panelsStayOpen-collapseSix" aria-expanded="false" aria-controls="panelsStayOpen-collapseThree">
+                          <span class="teal"><i class="fas fa-lightbulb"></i>  Ulteriori Skills</span>
+                      </button>
+                    </h2>
+                    <div id="panelsStayOpen-collapseSix" class="accordion-collapse collapse">
                       <div class="accordion-body">
                           <p>Ecco ulteriori conoscenze e il relativo livello: </p>
   
@@ -295,17 +415,203 @@
                           <div class="progress" role="progressbar" aria-label="Animated striped example" aria-valuenow="100" aria-valuemin="0" aria-valuemax="100">
                             <div class="progress-bar progress-bar-striped progress-bar-animated" style="width: 100%"></div>
                           </div>
-  
                       </div>
                     </div>
                   </div>
-
               </div>
+        </div>
+
+        <div id="education">
+          <h1 class="title"><span class="teal"><i class="fas fa-graduation-cap"></i> Formazione </span>e certificazioni</h1>
+
+          <!-- Timeline Formazione -->
+          <section class="py-5">
+            <ul class="timeline-with-icons">
+
+              <li class="timeline-item mb-5">
+                <span class="timeline-icon">
+                  <i class="fa fa-school"></i>
+                </span>
+
+                <h5 class="fw-bold">I.I.S. EINSTEIN - DE LORENZO</h5>
+                <p class="text-muted mb-2 fw-bold">Settembre 2019 - In corso...</p>
+                <p class="text-muted">
+                  Sto frequentando dal 2019 l'Istituto Tecnico Superiore EINSTEIN - DE LORENZO (Potenza). <br>Indirizzo Informatica e Telecomunicazioni, con articolazione Informatica.
+                </p>
+              </li>
+
+              <li class="timeline-item mb-5">
+                <span class="timeline-icon">
+                  <i class="fa fa-certificate"></i>
+                </span>
+
+                <h5 class="fw-bold">Certificazione CISCO CCNA</h5>
+                <p class="text-muted mb-2 fw-bold">Settembre 2023 - In corso...</p>
+                <p class="text-muted">
+                  Sto frequentando un corso formativo CISCO di "Sistemi e Reti" per ottenere la certificazione CCNA di Cisco.
+                </p>
+              </li>
+
+              <li class="timeline-item mb-5">
+                <span class="timeline-icon">
+                  <i class="fa fa-certificate"></i>
+                </span>
+
+                <h5 class="fw-bold">Certificazione CISCO IT ESSENTIALS</h5>
+                <p class="text-muted mb-2 fw-bold">Settembre 2022 - In corso...</p>
+                <p class="text-muted">
+                  Sto frequentando un corso formativo per ottenere la certificazione IT ESSENTIALS di Cisco.
+                </p>
+              </li>
+
+              <li class="timeline-item mb-5">
+                <span class="timeline-icon">
+                  <i class="fa fa-certificate"></i>
+                </span>
+
+                <h5 class="fw-bold">Certificazione Erasmus+</h5>
+                <p class="text-muted mb-2 fw-bold">Maggio 2022</p>
+                <p class="text-muted">
+                  Sono stato selezionato per partecipare al progetto Erasmus+ in cui si sono svolte attività di apprendimento, <br>insegnamento ed miglioramento della lingua inglese per una settimana a Piraeus (Grecia).
+                </p>
+              </li>
+
+              <li class="timeline-item mb-5">
+
+                <span class="timeline-icon">
+                  <i class="fa fa-school"></i>
+                </span>
+                <h5 class="fw-bold">I.C.S. ANTONIO BUSCIOLANO</h5>
+                <p class="text-muted mb-2 fw-bold">Settembre 2016 - Giugno 2019</p>
+                <p class="text-muted">
+                  Ho frequentato per tre anni le scuole medie presso l'Istituto Comprensivo Statale ANTONIO BUSCIOLANO.
+                </p>
+              </li>
+
+              <li class="timeline-item mb-5">
+                <span class="timeline-icon">
+                  <i class="fa fa-certificate"></i>
+                </span>
+
+                <h5 class="fw-bold">Certificazione Trinity College London</h5>
+                <p class="text-muted mb-2 fw-bold">Maggio 2018</p>
+                <p class="text-muted">
+                  Ho conseguito la certificazione in lingua inglese "Grade 3: Graded Examination in Spoken and Listening".<br>CERF Level A2.1, with Merit.
+                </p>
+              </li>
+
+            </ul>
+          </section>
+        </div> 
+
+        <!-- Sezione Contatti #contacts -->
+
+        <div id="contacts">
+          <h1 class="title"><span class="teal"><i class="fas fa-envelope"></i> Contatti</span> e Social Networks</h1>
+          <br>
+
+          <div class="row">
+
+            <div class="col-sm-4 mb-3 mb-sm-0">
+              <div class="card">
+                <div class="card-header"><span class="badge text-bg-success">Consigliato</span></div>
+                <div class="card-body">
+                  <h5 class="card-title">Cellulare</h5>
+                  <p class="card-text">Puoi contattarmi telefonicamente al numero <span class="teal">+39 320 798 5977</span>.<br>Dal lunedì al venerdì, 15:00 - 20:00.</p>
+                  <a href="#" class="btn teal-bg">Go somewhere</a>
+                </div>
+              </div>
+            </div>
+
+            <div class="col-sm-4 mb-3 mb-sm-0">
+              <div class="card">
+                <div class="card-header"><span class="badge text-bg-success">Consigliato</span></div>
+                <div class="card-body">
+                  <h5 class="card-title">Email</h5>
+                  <p class="card-text">Puoi contattarmi con un'e-mail <span class="teal">simone06potenza@gmail.com</span>.<br>Tempo di risposta medio-rapido.</p>
+                  <a href="https://" class="btn teal-bg">Go somewhere</a>
+                </div>
+              </div>
+            </div>
+
+            <div class="col-sm-4 mb-3 mb-sm-0">
+              <div class="card">
+                <div class="card-header"><span class="badge text-bg-success">Consigliato</span></div>
+                <div class="card-body">
+                  <h5 class="card-title">WhatsApp</h5>
+                  <p class="card-text">Puoi contattarmi tramite WhatsApp al numero <span class="teal">+39 320 798 5977</span>.<br>Tempo di risposta molto rapido.</p>
+                  <a href="https://" class="btn teal-bg">Apri WhatsApp!</a>
+                </div>
+              </div>
+            </div>
+
+          </div>
+
+          <br>
+
+          <div class="row">
+            <div class="col-sm-4 mb-3 mb-sm-0">
+              <div class="card">
+                <div class="card-header"><span class="badge text-bg-danger">Non consigliato</span></div>
+                <div class="card-body">
+                  <h5 class="card-title">Instagram</h5>
+                  <p class="card-text">Puoi contattarmi tramite Instagram al profilo <span class="teal">@smn.pz</span>.<br>Tempo di risposta molto lento.</p>
+                  <a href="https://instagram.com/smn.pz" class="btn teal-bg">Apri Instagram!</a>
+                </div>
+              </div>
+            </div>
+
+            <div class="col-sm-4 mb-3 mb-sm-0">
+              <div class="card">
+                <div class="card-header"><span class="badge text-bg-dark">Nessun contatto</span></div>
+                <div class="card-body">
+                  <h5 class="card-title">GitHub</h5>
+                  <p class="card-text">Puoi visionare il mio profilo GitHub <span class="teal">@smnpz</span>.<br><br></p>
+                  <a href="https://github.com/smnpz" class="btn teal-bg">Apri GitHub!</a>
+                </div>
+              </div>
+            </div>
+          </div>
 
         </div>
 
-    </div>
+        <!-- Sezione Riassunto #resume -->
 
+        <div id="resume">
+          <h1 class="title"><span class="teal"><i class="fas fa-file-alt"></i> Riassunto</span> e curriculum aggiornato</h1>
+          <br>
+
+          <div class="row">
+            <div class="col-sm-6 mb-3 mb-sm-0">
+              <div class="card">
+                <div class="card-header"><span class="badge text-bg-primary">A colpo d'occhio!</span></div>
+                <div class="card-body">
+                  <h5 class="card-title">Chi sono?</h5>
+                  <p class="card-text">Mi chiamo Simone Potenza, ho 17 anni e sto studiando per diventare uno sviluppatore software e web.<br><br>Conosco linguaggi di programmmazione e web come Python, Java, C, C++, C#, HTML, CSS e altri.<br><br>Sempre disponibile per nuovi progetti! Per ulteriori informazioni, contattami.</p>
+                </div>
+              </div>
+            </div>
+
+            <div class="col-sm-6 mb-3 mb-sm-0">
+              <div class="card">
+                <div class="card-header"><span class="badge text-bg-danger">Scarica il PDF</span></div>
+                <div class="card-body">
+                  <h5 class="card-title">Curriculum Europass 2024</h5>
+                  <p class="card-text">Premi il bottone sottostante per scaricare il mio attuale curriculum.<br>Il CV è stato realizzato utilizzando <a href="https://europa.eu">Europass</a>, un sito web dedicato.<br><br><br></p>
+                  <a href="cv.pdf" download>
+                    <button class="btn teal-bg">Scarica CV</button>
+                  </a>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+    </div>
     <script src="script.js"></script>
+  </main>
+  <footer>
+    <center><p>Per ora è tutto. Grazie per aver visitato il mio website!</p></center>
+    <center><p>&copy; Simone Potenza</p></center>
+  </footer>
 </body>
 </html>
