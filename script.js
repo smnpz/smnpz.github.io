@@ -5,6 +5,9 @@ function updateDynamicText() {
         "Grafico", 
         "Developer", 
         "Pythonista",
+        "Software Developer",
+        "Web Developer",
+        "Telegram Bot Developer"
     ];
     
     var indice_random = Math.floor(Math.random() * testi_dinamici.length);
