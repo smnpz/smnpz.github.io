@@ -1,7 +1,7 @@
 body {
-    background-color:aliceblue;
+    background-color: #222; /* Cambia il colore di sfondo del body per il tema scuro */
+    color: #eee; /* Cambia il colore del testo per il tema scuro */
 }
-
 
 main {
     margin-left: 17%;
@@ -19,7 +19,6 @@ footer {
     font-family: Arial, sans-serif;
 }
 
-
 a {
     text-decoration: none;
     color: teal;
@@ -29,14 +28,28 @@ a {
     padding-top: 20px;
 }
 
+.card {
+    color: white;
+    background-color: #333;
+}
+
+.accordion-item {
+    color: white;
+    background-color: #333;
+}
+
+.timeline-item {
+    color: white;
+}
+
 .color-theme {
-    color: black;
+    color: white;
 }
 
 /* Sezione Sidebar */
 
 #sidebar {
-    background-color: teal;
+    background-color: teal; 
     color: white;
     width: 17%;
     height: 100vh;
@@ -87,17 +100,17 @@ a {
 }
 
 .title {
-    font-family:Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+    font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
     font-size: xxx-large;
 }
 
 .sub-title {
-    font-family:Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+    font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
     font-size: xxx-large;
 }
 
 .home-desc {
-    font-family:Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+    font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
     font-size: x-large;
     text-align: justify;
 }
@@ -109,7 +122,7 @@ a {
 }
 
 .table-font {
-    font-family:Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+    font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
 }
 
 /*Sezione PROJECTS*/
