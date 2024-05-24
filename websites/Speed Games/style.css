@@ -1,0 +1,171 @@
+.main-content {
+    background-color: #2B87D1;
+    min-height: 650px;
+}
+
+.main-icon {
+    color: #FFD43B;
+    margin-top: 150px;
+    margin-bottom: 50px;
+}
+
+.main-text {
+    color: white;
+    font-size: 70px;
+    font-family:Arial, Helvetica, sans-serif;
+}
+
+.main-subtext {
+    color: white;
+    font-size: 30px;
+    font-family:Arial, Helvetica, sans-serif;
+}
+
+.main-subtext2 {
+    color: #FFD43B;
+    font-size: 20px;
+    font-family:Arial, Helvetica, sans-serif;
+}
+
+.main-button {
+    color: black;
+    background-color: #FFD43B;
+    font-family:Arial, Helvetica, sans-serif;
+    font-size: 20px;
+    margin: 60px;
+    width: 200px;
+
+}
+
+.yellow-text {
+    color: #FFD43B;
+}
+
+/* Sezione degli aggiornamenti */
+
+.updates-section {
+    margin-top: 50px;
+    padding-bottom: 100px;
+}
+
+.news {
+    margin-top: 20px;
+}
+
+.update-title {
+    color: black;
+    font-family:Arial, Helvetica, sans-serif;
+    font-size: 50px;
+    padding-bottom: 50px;
+}
+
+/* Sezione dei Giochi */
+
+.games-content {
+    margin-top: 50px;
+}
+
+.games-title {
+    color: black;
+    font-family:Arial, Helvetica, sans-serif;
+    font-size: 50px;
+}
+
+.cards-section {
+    padding-left: 100px;
+    padding-right: 100px;
+}
+
+.games-card {
+    height: 250px; width: 250px;
+}
+
+.game-card {
+    height: 280px; 
+    width: 300px;
+    margin: 15px;
+}
+
+.game-card-icon {
+    color: #2B87D1;
+    margin: 5px;
+    padding-bottom: 5px;
+    padding-top: 20px;
+    margin-bottom: 15px;
+}
+
+.game-card-title {
+    color: black;
+    font-family:Arial, Helvetica, sans-serif;
+    font-size: 25px;
+}
+
+.game-card-text {
+    font-family:Arial, Helvetica, sans-serif;
+    font-size: 20px;
+    padding-top: 15px;
+}
+
+.badge {
+    color: white;
+    padding: 5px;
+    font-size: 15px;
+    border-radius: 0 0 0 0.25rem;
+}
+
+/* Game start */
+
+.game-header {
+    color: #FFD43B;
+    
+    margin-top: 150px;
+    margin-bottom: 50px;
+}
+
+.game-score {
+    color:lightgray;
+    font-size: 25px;
+}
+
+.word {
+    margin-top: 200px;
+    color:black;
+    font-size: 80px;
+}
+
+.word-button {
+    font-size: 20px;
+    width: 150px;
+    margin: 20px;
+}
+
+.word-check {
+    color:white;
+    font-size: 30px;
+}
+
+.number {
+    margin-top: 200px;
+    color:black;
+    font-size: 80px;
+}
+
+.disk {
+    height: 30px;
+    margin: 0 auto;
+}
+
+.yellow-button {
+    color: #000;
+    background-color: #FFD43B;
+}
+
+.progress-bar {
+    transition: width 5s;
+}
+
+.insert-text {
+    font-size: 20px;
+    color:white;
+    padding-bottom: 20px;
+}
