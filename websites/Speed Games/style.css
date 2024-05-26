@@ -169,3 +169,18 @@
     color:white;
     padding-bottom: 20px;
 }
+
+.gtf-button {
+    height: 50px;
+    width: 150px;
+    color: 30px;
+    color:black;
+    background-color: #FFD43B;
+    opacity: 90%;
+    margin: 10px;
+}
+
+.flag {
+    width: 250px;
+    padding-top: 20px;
+}

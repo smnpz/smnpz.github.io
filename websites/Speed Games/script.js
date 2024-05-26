@@ -18,6 +18,9 @@ function startGame(game) {
         case 6:
             startGame_numberMemory();
             break;
+        case 7:
+            startGame_guessTheFlag();
+            break;
     }
 }
 
@@ -519,6 +522,162 @@ function startNumberMemoryGame(level) {
             showInputSection(numero_generato, level);
         }, progressTime);
     }, 100);
+}
+
+function startGame_guessTheFlag() {
+    let section = document.getElementById('game-section');
+    section.onclick = null;
+    section.innerHTML = `<div id="main-section" class="main-content">
+                            <center><span id="game-head"><i class="fa-solid fa-flag fa-fade fa-8x main-icon"></i></span></center>
+                            <center><span id="game-name" class="main-text">Il gioco inizia tra... <span class="yellow-text">3</span></span></center>
+                            <center><span id="game-info" class="main-subtext">Come te la cavi in geografia?</span></center>
+                            <center><span id= "game-button"></span></center>
+                        </div>`;
+
+    let name = document.getElementById('game-name');
+    let seconds = 3;
+
+    const countdownInterval = setInterval(function() {
+        seconds--;
+        name.innerHTML = `Il gioco inizia tra... <span class="yellow-text">${seconds}</span>`;
+        if (seconds <= 0) {
+            clearInterval(countdownInterval);
+            startFlagLevel(1);
+        }
+    }, 1000);
+}
+
+function startFlagLevel(level) {
+    let section = document.getElementById('game-section')
+
+    const countryCodes = [
+        "ad", "ae", "af", "ag", "ai", "al", "am", "ao", "aq", "ar",
+        "as", "at", "au", "aw", "ax", "az", "ba", "bb", "bd", "be",
+        "bf", "bg", "bh", "bi", "bj", "bl", "bm", "bn", "bo", "bq",
+        "br", "bs", "bt", "bv", "bw", "by", "bz", "ca", "cc", "cd",
+        "cf", "cg", "ch", "ci", "ck", "cl", "cm", "cn", "co", "cr",
+        "cu", "cv", "cw", "cx", "cy", "cz", "de", "dj", "dk", "dm",
+        "do", "dz", "ec", "ee", "eg", "eh", "er", "es", "et", "eu",
+        "fi", "fj", "fk", "fm", "fo", "fr", "ga", "gb", "gb-eng", "gb-nir",
+        "gb-sct", "gb-wls", "gd", "ge", "gf", "gg", "gh", "gi", "gl", "gm",
+        "gn", "gp", "gq", "gr", "gs", "gt", "gu", "gw", "gy", "hk",
+        "hm", "hn", "hr", "ht", "hu", "id", "ie", "il", "im", "in",
+        "io", "iq", "ir", "is", "it", "je", "jm", "jo", "jp", "ke",
+        "kg", "kh", "ki", "km", "kn", "kp", "kr", "kw", "ky", "kz",
+        "la", "lb", "lc", "li", "lk", "lr", "ls", "lt", "lu", "lv",
+        "ly", "ma", "mc", "md", "me", "mf", "mg", "mh", "mk", "ml",
+        "mm", "mn", "mo", "mp", "mq", "mr", "ms", "mt", "mu", "mv",
+        "mw", "mx", "my", "mz", "na", "nc", "ne", "nf", "ng", "ni",
+        "nl", "no", "np", "nr", "nu", "nz", "om", "pa", "pe", "pf",
+        "pg", "ph", "pk", "pl", "pm", "pn", "pr", "ps", "pt", "pw",
+        "py", "qa", "re", "ro", "rs", "ru", "rw", "sa", "sb", "sc",
+        "sd", "se", "sg", "sh", "si", "sj", "sk", "sl", "sm", "sn",
+        "so", "sr", "ss", "st", "sv", "sx", "sy", "sz", "tc", "td",
+        "tf", "tg", "th", "tj", "tk", "tl", "tm", "tn", "to", "tr",
+        "tt", "tv", "tw", "tz", "ua", "ug", "um", "un", "us", "us-ak",
+        "us-al", "us-ar", "us-az", "us-ca", "us-co", "us-ct", "us-de", "us-fl", "us-ga", "us-hi",
+        "us-ia", "us-id", "us-il", "us-in", "us-ks", "us-ky", "us-la", "us-ma", "us-md", "us-me",
+        "us-mi", "us-mn", "us-mo", "us-ms", "us-mt", "us-nc", "us-nd", "us-ne", "us-nh", "us-nj",
+        "us-nm", "us-nv", "us-ny", "us-oh", "us-ok", "us-or", "us-pa", "us-ri", "us-sc", "us-sd",
+        "us-tn", "us-tx", "us-ut", "us-va", "us-vt", "us-wa", "us-wi", "us-wv", "us-wy", "uy",
+        "uz", "va", "vc", "ve", "vg", "vi", "vn", "vu", "wf", "ws",
+        "xk", "ye", "yt", "za", "zm", "zw"
+    ];
+
+    const countryNames = [
+        "Andorra", "Emirati Arabi Uniti", "Afghanistan", "Antigua e Barbuda", "Anguilla", "Albania", "Armenia", "Angola", "Antartide", "Argentina",
+        "Samoa Americane", "Austria", "Australia", "Aruba", "Isole Aland", "Azerbaigian", "Bosnia ed Erzegovina", "Barbados", "Bangladesh", "Belgio",
+        "Burkina Faso", "Bulgaria", "Bahrein", "Burundi", "Benin", "Saint-Barthélemy", "Bermuda", "Brunei", "Bolivia", "Paesi Bassi caraibici",
+        "Brasile", "Bahamas", "Bhutan", "Isola Bouvet", "Botswana", "Bielorussia", "Belize", "Canada", "Isole Cocos", "Congo (Rep. Dem.)",
+        "Repubblica Centrafricana", "Congo", "Svizzera", "Costa d'Avorio", "Isole Cook", "Cile", "Camerun", "Cina", "Colombia", "Costa Rica",
+        "Cuba", "Capo Verde", "Curaçao", "Isola di Natale", "Cipro", "Repubblica Ceca", "Germania", "Gibuti", "Danimarca", "Dominica",
+        "Repubblica Dominicana", "Algeria", "Ecuador", "Estonia", "Egitto", "Sahara Occidentale", "Eritrea", "Spagna", "Etiopia", "Unione Europea",
+        "Finlandia", "Figi", "Isole Falkland", "Micronesia", "Far Oer", "Francia", "Gabon", "Regno Unito", "Inghilterra", "Irlanda del Nord",
+        "Scozia", "Galles", "Grenada", "Georgia", "Guyana francese", "Guernsey", "Ghana", "Gibilterra", "Groenlandia", "Gambia",
+        "Guinea", "Guadalupa", "Guinea Equatoriale", "Grecia", "Georgia del Sud e Isole Sandwich Australi", "Guatemala", "Guam", "Guinea-Bissau", "Guyana", "Hong Kong",
+        "Isole Heard e McDonald", "Honduras", "Croazia", "Haiti", "Ungheria", "Indonesia", "Irlanda", "Israele", "Isola di Man", "India",
+        "Territorio britannico dell'Oceano Indiano", "Iraq", "Iran", "Islanda", "Italia", "Baliato di Jersey", "Giamaica", "Giordania", "Giappone", "Kenya",
+        "Kirghizistan", "Cambogia", "Kiribati", "Comore", "Saint Kitts e Nevis", "Corea del Nord", "Corea del Sud", "Kuwait", "Isole Cayman", "Kazakistan",
+        "Laos", "Libano", "Santa Lucia", "Liechtenstein", "Sri Lanka", "Liberia", "Lesotho", "Lituania", "Lussemburgo", "Lettonia",
+        "Libia", "Marocco", "Principato di Monaco", "Moldavia", "Montenegro", "Saint-Martin (Francia)", "Madagascar", "Isole Marshall", "Macedonia del Nord", "Mali",
+        "Birmania", "Mongolia", "Macao", "Isole Marianne Settentrionali", "Martinica", "Mauritania", "Montserrat", "Malta", "Mauritius", "Maldive",
+        "Malawi", "Messico", "Malesia", "Mozambico", "Namibia", "Nuova Caledonia", "Niger", "Isola Norfolk", "Nigeria", "Nicaragua",
+        "Paesi Bassi", "Norvegia", "Nepal", "Nauru", "Niue", "Nuova Zelanda", "Oman", "Panama", "Perù", "Polinesia francese",
+        "Papua Nuova Guinea", "Filippine", "Pakistan", "Polonia", "Saint-Pierre e Miquelon", "Isole Pitcairn", "Porto Rico", "Palestina", "Portogallo", "Palau",
+        "Paraguay", "Qatar", "Riunione", "Romania", "Serbia", "Russia", "Ruanda", "Arabia Saudita", "Isole Salomone", "Seychelles",
+        "Sudan", "Svezia", "Singapore", "Sant'Elena, Ascensione e Tristan da Cunha", "Slovenia", "Svalbard e Jan Mayen", "Slovacchia", "Sierra Leone", "San Marino", "Senegal",
+        "Somalia", "Suriname", "Sudan del Sud", "São Tomé e Príncipe", "El Salvador", "Sint Maarten", "Siria", "Swaziland", "Turks e Caicos", "Ciad",
+        "Terre australi e antartiche francesi", "Togo", "Thailandia", "Tagikistan", "Tokelau", "Timor Est", "Turkmenistan", "Tunisia", "Tonga", "Turchia",
+        "Trinidad e Tobago", "Tuvalu", "Taiwan", "Tanzania", "Ucraina", "Uganda", "Isole minori esterne degli Stati Uniti d'America", "Organizzazione delle Nazioni Unite", "Stati Uniti d'America", "Alaska",
+        "Alabama", "Arkansas", "Arizona", "California", "Colorado", "Connecticut", "Delaware", "Florida", "Georgia", "Hawaii",
+        "Iowa", "Idaho", "Illinois", "Indiana", "Kansas", "Kentucky", "Louisiana", "Massachusetts", "Maryland", "Maine",
+        "Michigan", "Minnesota", "Missouri", "Mississippi", "Montana", "Carolina del Nord", "Dakota del Nord", "Nebraska", "New Hampshire", "New Jersey",
+        "Nuovo Messico", "Nevada", "New York", "Ohio", "Oklahoma", "Oregon", "Pennsylvania", "Rhode Island", "Carolina del Sud", "Dakota del Sud",
+        "Tennessee", "Texas", "Utah", "Virginia", "Vermont", "Washington", "Wisconsin", "Virginia Occidentale", "Wyoming", "Uruguay",
+        "Uzbekistan", "Città del Vaticano", "Saint Vincent e Grenadine", "Venezuela", "Isole Vergini britanniche", "Isole Vergini americane", "Vietnam", "Vanuatu", "Wallis e Futuna", "Samoa",
+        "Kosovo", "Yemen", "Mayotte", "Sudafrica", "Zambia", "Zimbabwe"
+    ];
+
+    let correctIndex = Math.floor(Math.random() * countryCodes.length);
+    let correctCode = countryCodes[correctIndex];
+    let correctName = countryNames[correctIndex];
+
+    // Generare risposte errate
+    let wrongAnswers = [];
+    while (wrongAnswers.length < 3) {
+        let wrongIndex = Math.floor(Math.random() * countryNames.length);
+        if (wrongIndex !== correctIndex && !wrongAnswers.includes(countryNames[wrongIndex])) {
+            wrongAnswers.push(countryNames[wrongIndex]);
+        }
+    }
+
+    // Mescolare le risposte
+    let answers = [correctName, ...wrongAnswers];
+    answers = answers.sort(() => Math.random() - 0.5);
+
+    section.innerHTML = `<div id="main-section" class="main-content">
+        <div id="number-section" style="padding-top: 100px;">
+            <center><span id="game-score" class="game-score">Livello n.<span id="level">${level}</span></span><br></center>
+            <center><span><img
+                id="flag"
+                class="flag"
+                src="https://flagcdn.com/w160/${correctCode}.png"
+                alt="Immagine di una bandiera"></span></center>
+        </div>
+        <div style="padding-top: 50px;">
+            <center><span id="game-info" class="main-subtext">Di quale bandiera si tratta?</span></center>
+            <div class="container">
+                <div class="row">
+                    ${answers.map((answer, index) => `
+                        <div class="col-md-6">
+                            <center><button class="btn gtf-button" onclick="checkAnswer('${answer}', '${correctName}', ${level})">${String.fromCharCode(65 + index)}. ${answer}</button></center>
+                        </div>
+                    `).join('')}
+                </div>
+            </div>
+        </div>
+    </div>`;
+}
+
+function checkAnswer(selectedAnswer, correctAnswer, currentLevel) {
+    if (selectedAnswer == correctAnswer) {
+        startFlagLevel(currentLevel + 1);
+    } else {
+        end_guessTheFlag(currentLevel, correctAnswer, selectedAnswer)
+    }
+}
+
+function end_guessTheFlag(level, paese_corretto, userInput) {
+    let section = document.getElementById('game-section');
+    section.innerHTML = `<div id = "main-section" class = "main-content">
+        <center><span id = "game-head"><i class="fa-solid fa-flag fa-8x main-icon"></i></span></center>
+        <center><span id = "game-name" class = "main-text">Hai raggiunto il <span class="yellow-text">livello ${level}</span>!</span></center>
+        <center><span id = "game-info" class="main-subtext"><i class="fa-solid fa-circle-check" style="color: #00ff04;"></i> Il paese corretto era <span class="yellow-text">${paese_corretto}</span>.<br><i class="fa-solid fa-circle-exclamation" style="color:#ff9100"></i> Il paese che hai scelto e' <span class="yellow-text">${userInput}</span>.</span></center>
+        <center><span id= "game-button"></span></center>
+    </div>`;
+
+    let button = document.getElementById('game-button');
+    button.innerHTML = `<a href = "guess-the-flag.html"><button class = "btn main-button">Gioca di nuovo!</button></a>`;
 }
 
 function showInputSection(numero_generato, level) {
