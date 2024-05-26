@@ -21,6 +21,9 @@ function startGame(game) {
         case 7:
             startGame_guessTheFlag();
             break;
+        case 8:
+            startGame_mathSolver();
+            break;
     }
 }
 
@@ -430,44 +433,6 @@ function startGame_wordMemory() {
     }, 1000);
 }
 
-function calcPoints(parole_totali, parole_nuove, parole_ripetute, risposte_nuove, risposte_viste) {
-    let punti = 0;
-    for (let i = 0; i < parole_totali.length; i++) {
-        if (parole_nuove.includes(parole_totali[i]) && risposte_nuove.includes(parole_totali[i])) {
-            punti++;
-        }
-        if (parole_ripetute.includes(parole_totali[i]) && risposte_viste.includes(parole_totali[i])) {
-            punti++;
-        }
-    }
-    console.log(punti);
-}
-
-// Utility functions
-function getRandomElements(arr, num) {
-    let result = new Array(num),
-        len = arr.length,
-        taken = new Array(len);
-    if (num > len)
-        throw new RangeError("getRandomElements: more elements taken than available");
-    while (num--) {
-        let x = Math.floor(Math.random() * len);
-        result[num] = arr[x in taken ? taken[x] : x];
-        taken[x] = --len in taken ? taken[len] : len;
-    }
-    return result;
-}
-
-function shuffleArray(array) {
-    for (let i = array.length - 1; i > 0; i--) {
-        const j = Math.floor(Math.random() * (i + 1));
-        [array[i], array[j]] = [array[j], array[i]];
-    }
-    return array;
-}
-
-
-
 function startGame_numberMemory() {
     let section = document.getElementById('game-section');
     section.onclick = null;
@@ -546,6 +511,102 @@ function startGame_guessTheFlag() {
         }
     }, 1000);
 }
+
+function startGame_mathSolver() {
+    let section = document.getElementById('game-section');
+    section.onclick = null;
+    section.innerHTML = `<div id="main-section" class="main-content">
+                            <center><span id="game-head"><i class="fa-solid fa-calculator fa-fade fa-8x main-icon"></i></span></center>
+                            <center><span id="game-name" class="main-text">Il gioco inizia tra... <span class="yellow-text">3</span></span></center>
+                            <center><span id="game-info" class="main-subtext">Come te la cavi in matematica?</span></center>
+                            <center><span id= "game-button"></span></center>
+                        </div>`;
+
+    let name = document.getElementById('game-name');
+    let seconds = 3;
+
+    const countdownInterval = setInterval(function() {
+        seconds--;
+        name.innerHTML = `Il gioco inizia tra... <span class="yellow-text">${seconds}</span>`;
+        if (seconds <= 0) {
+            clearInterval(countdownInterval);
+            startMathLevel(1);
+        }
+    }, 1000);
+}
+
+/********************************************************* MATH SOLVER ***********************************************************************/
+
+function startMathLevel(level) {
+    let section = document.getElementById('game-section')
+
+    section.innerHTML = `<div id="main-section" class="main-content">
+            <div class="container">
+            <div id="number-section" style="padding-top: 200px;">
+                <center><span id="game-score" class="game-score">Livello n. ?</span></center>
+                
+                <center><span id="espressione" class="number">... =</span></center>
+                
+                <center><div class="input-group mb-3" style="width: 300px; padding-top: 30px;">
+                            <input type="text" id="user-input" class="form-control" placeholder="Scrivi qui il risultato..." style="width: 100px;">
+                        </div>
+                </center>
+            </div>
+            <div class="row" style="padding-top: 30px;">
+                <center><button class="btn btn-warning">Conferma il risultato</button></center>
+            </div>
+        </div>
+    </div>`;
+
+    let operatore = ["+", "-", "*"]
+    let espressione = numero_casuale(0, 9) + "" + operatore[numero_casuale(0, operatore.length-1)] + "" + numero_casuale(0, 9) + "" + operatore[numero_casuale(0, operatore.length-1)] + "" + numero_casuale(0, 9);
+    let risultato_corretto = eval(espressione);
+    console.log(risultato_corretto);
+
+    section.innerHTML = `<div id="main-section" class="main-content">
+            <div class="container">
+            <div id="number-section" style="padding-top: 200px;">
+                <center><span id="game-score" class="game-score">Livello n. ${level}</span></center>
+                
+                <center><span id="espressione" class="number">${espressione} =</span></center>
+                
+                <center><div class="input-group mb-3" style="width: 300px; padding-top: 30px;">
+                            <input type="text" id="user-input" class="form-control" placeholder="Scrivi qui il risultato..." style="width: 100px;">
+                        </div>
+                </center>
+            </div>
+            <div class="row" style="padding-top: 30px;">
+                <center><button class="btn btn-warning" onclick="checkMathResult(${level}, '${risultato_corretto}')">Conferma il risultato</button></center>
+            </div>
+        </div>
+    </div>`;
+}
+
+
+function checkMathResult(level, correct) {
+    let user = document.getElementById('user-input').value;
+    if(user == correct) startMathLevel(level + 1);
+    else endMathGame(correct, user, level);
+
+}
+
+function endMathGame(correct, user, level) {
+    let section = document.getElementById('game-section');
+    section.innerHTML = `<div id = "main-section" class = "main-content">
+        <center><span id = "game-head"><i class="fa-solid fa-calculator fa-8x main-icon"></i></span></center>
+        <center><span id = "game-name" class = "main-text">Hai raggiunto il <span class="yellow-text">livello ${level}</span>!</span></center>
+        <center><span id = "game-info" class="main-subtext"><i class="fa-solid fa-circle-check" style="color: #00ff04;"></i> Il risultato corretto era <span class="yellow-text">${correct}</span>.<br><i class="fa-solid fa-circle-exclamation" style="color:#ff9100"></i> Il risultato che hai inserito e' <span class="yellow-text">${user}</span>.</span></center>
+        <center><span id= "game-button"></span></center>
+    </div>`;
+
+    let button = document.getElementById('game-button');
+    button.innerHTML = `<a href = "math-solver.html"><button class = "btn main-button">Gioca di nuovo!</button></a>`;
+}
+
+/********************************************************************************************************************************/
+
+/********************************************************* GUESS THE FLAG ***********************************************************************/
+
 
 function startFlagLevel(level) {
     let section = document.getElementById('game-section')
@@ -679,6 +740,9 @@ function end_guessTheFlag(level, paese_corretto, userInput) {
     let button = document.getElementById('game-button');
     button.innerHTML = `<a href = "guess-the-flag.html"><button class = "btn main-button">Gioca di nuovo!</button></a>`;
 }
+/********************************************************************************************************************************/
+
+/*********************************************************** NUMBER MEMORY *********************************************************************/
 
 function showInputSection(numero_generato, level) {
     let section = document.getElementById('game-section');
@@ -694,7 +758,7 @@ function showInputSection(numero_generato, level) {
                                 </center>
                             </div>
                             <div class="row" style="padding-top: 30px;">
-                                <center><button class="btn btn-success" onclick="checkUserInput('${numero_generato}', ${level})">Avanti</button></center>
+                                <center><button class="btn btn-warning" onclick="checkUserInput('${numero_generato}', ${level})">Conferma il numero</button></center>
                             </div>
                         </div>`;
 }
@@ -721,7 +785,9 @@ function end_numberMemory(level, numero_generato, userInput) {
     button.innerHTML = `<a href = "number-memory.html"><button class = "btn main-button">Gioca di nuovo!</button></a>`;
 }
 
-/* Gioco n° 4 - Word Memory*/
+/********************************************************************************************************************************/
+
+/******************************************************* WORD MEMORY *************************************************************************/
 
 function getRandomElements(arr, num) {
     let result = new Array(num);
@@ -744,9 +810,45 @@ function shuffleArray(array) {
     return array;
 }
 
+function calcPoints(parole_totali, parole_nuove, parole_ripetute, risposte_nuove, risposte_viste) {
+    let punti = 0;
+    for (let i = 0; i < parole_totali.length; i++) {
+        if (parole_nuove.includes(parole_totali[i]) && risposte_nuove.includes(parole_totali[i])) {
+            punti++;
+        }
+        if (parole_ripetute.includes(parole_totali[i]) && risposte_viste.includes(parole_totali[i])) {
+            punti++;
+        }
+    }
+    console.log(punti);
+}
 
+// Utility functions
+function getRandomElements(arr, num) {
+    let result = new Array(num),
+        len = arr.length,
+        taken = new Array(len);
+    if (num > len)
+        throw new RangeError("getRandomElements: more elements taken than available");
+    while (num--) {
+        let x = Math.floor(Math.random() * len);
+        result[num] = arr[x in taken ? taken[x] : x];
+        taken[x] = --len in taken ? taken[len] : len;
+    }
+    return result;
+}
 
-/*Gioco n° 3 - Hanoi Tower*/
+function shuffleArray(array) {
+    for (let i = array.length - 1; i > 0; i--) {
+        const j = Math.floor(Math.random() * (i + 1));
+        [array[i], array[j]] = [array[j], array[i]];
+    }
+    return array;
+}
+
+/********************************************************************************************************************************/
+
+/****************************************************** TORRE DI HANOI ***********************************************************/
 
 function drawScene(){
     drawPoles();
@@ -895,10 +997,14 @@ function showWinMessage() {
 
 }
 
-/* Gioco n° 2 - Reaction Time*/
+/********************************************************************************************************************************/
+
+/****************************************************** REACTION TIME ***********************************************************/
 
 function numero_casuale(min, max) {
     min = Math.ceil(min);
     max = Math.floor(max);
     return Math.floor(Math.random() * (max - min + 1)) + min;
 }
+
+/********************************************************************************************************************************/

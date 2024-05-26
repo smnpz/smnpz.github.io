@@ -40,6 +40,16 @@
 .yellow-text {
     color: #FFD43B;
 }
+/* Sezione deglla privacy */
+
+.privacy-section {
+    padding: 20px;
+    text-align: justify;
+    color: black;
+    font-family:Arial, Helvetica, sans-serif;
+    font-size: 20px;
+    background-color: white;
+}
 
 /* Sezione degli aggiornamenti */
 
@@ -57,6 +67,16 @@
     font-family:Arial, Helvetica, sans-serif;
     font-size: 50px;
     padding-bottom: 50px;
+}
+
+/* Sezione footer */
+
+footer {
+    background-color: #2B87D1;
+    color: white;
+    font-family:Arial, Helvetica, sans-serif;
+    font-size: 15px;
+    text-align: center;
 }
 
 /* Sezione dei Giochi */
@@ -181,6 +201,7 @@
 }
 
 .flag {
-    width: 250px;
+    width: 270px;
+    height: 150px;
     padding-top: 20px;
 }

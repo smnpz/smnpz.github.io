@@ -13,53 +13,44 @@
     <header>
         <nav class="navbar fixed-top navbar-expand-lg bg-body-tertiary" style="border-radius: 20px; margin: 5px; opacity: 90%;">
             <div class="container-fluid">
-              <a class="navbar-brand" href="#"><i class="fa-solid fa-bolt yellow-text"></i> Speed Games</a>
+              <a class="navbar-brand" href="../index.html"><i class="fa-solid fa-bolt yellow-text"></i> Speed Games</a>
               <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNavAltMarkup" aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
                 <span class="navbar-toggler-icon"></span>
               </button>
               <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
                 <div class="navbar-nav">
-                    <a class="nav-link" href="index.html#games-section">Tutti i Giochi</a>
+                    <a class="nav-link" href="../index.html#games-section">Tutti i Giochi</a>
                   </div>
                 <div class="navbar-nav">
-                  <a class="nav-link" href="updates.html">Ultime news</a>
+                  <a class="nav-link" href="../updates.html">Ultime news</a>
+                </div>
+                <div class="navbar-nav">
+                    <a class="nav-link" href="../privacy-policy.html">Privacy Policy</a>
                 </div>
               </div>
             </div>
           </nav>
     </header>
     <main>
-        <a id = "game-section" href="#" style="text-decoration: none; color: inherit;" onclick=startGame(7)>
+        <a id = "game-section" href="#" style="text-decoration: none; color: inherit;" onclick=startGame(6)>
             <div id="main-section" class="main-content">
-                <div id="number-section" style="padding-top: 200px;">
-                    <center><span id="game-score" class="game-score">Livello n.<span id="level">1</span></span><br></center>
-                    <center><span id="flag"><img
+                <div id="number-section" style="padding-top: 100px;">
+                    <center><span id="game-score" class="game-score">Livello n.<span id="level">${level}</span></span><br></center>
+                    <center><span><img
+                        id="flag"
                         class="flag"
-                        src="https://flagcdn.com/w160/vg.png"
-                        alt="Ucraina"></span></center>
+                        src="https://flagcdn.com/w160/it.png"
+                        alt="Immagine di una bandiera"></span></center>
                 </div>
                 <div style="padding-top: 50px;">
                     <center><span id="game-info" class="main-subtext">Di quale bandiera si tratta?</span></center>
                     <div class="container">
                         <div class="row">
-                            <div class="col-md-4"></div>
-                            <div class="col-md-2">
-                                <center><button class="btn gtf-button">A. Italia</button></center>
-                            </div>
-                            <div class="col-md-2">
-                                <center><button class="btn gtf-button">A. Italia</button></center>
-                            </div>
-                            <div class="col-md-4"></div>
-                        </div>
-                        <div class="row">
-                            <div class="col-md-4"></div>
-                            <div class="col-md-2">
-                                <center><button class="btn gtf-button">A. Italia</button></center>
-                            </div>
-                            <div class="col-md-2">
-                                <center><button class="btn gtf-button">A. Italia</button></center>
-                            </div>
-                            <div class="col-md-4"></div>
+                            ${answers.map((answer, index) => `
+                                <div class="col-md-6">
+                                    <center><button class="btn gtf-button" onclick="checkAnswer('IT', 'IT', 2)">${String.fromCharCode(65 + index)}. ${answer}</button></center>
+                                </div>
+                            `).join('')}
                         </div>
                     </div>
                 </div>
@@ -87,87 +78,4 @@
                             <div class="card game-card shadow">
                                 <span class="badge text-bg-danger position-absolute top-0 end-0">New</span>
                                 <div class="game-card-body card-body">
-                                    <center><i class="fa-solid fa-eye fa-4x game-card-icon"></i></center>
-                                    <center><h5 class="game-card-title card-title">Reaction Time</h5></center>
-                                    <center><p class="game-card-text">Quanto sono veloci i tuoi riflessi?</p></center>
-                                </div>
-                            </div>
-                        </a>
-                    </div>
-
-                    <div class="col-sm-4">
-                        <a href="aim-trainer.html" style="text-decoration: none; color: inherit;">
-                            <div class="card game-card shadow">
-                                <span class="badge text-bg-danger position-absolute top-0 end-0">New</span>
-                                <div class="game-card-body card-body">
-                                    <center><i class="fa-solid fa-bullseye fa-4x game-card-icon"></i></center>
-                                    <center><h5 class="game-card-title card-title">Aim Trainer</h5></center>
-                                    <center><p class="game-card-text">Quanti bersagli riesci colpire in 15 secondi?</p></center>
-                                </div>
-                            </div>
-                        </a>
-                    </div>
-                </div>
-
-                <div class="row">
-                    <div class="col-sm-4">
-                        <a href="hanoi-tower.html" style="text-decoration: none; color: inherit;">
-                            <div class="card game-card shadow">
-                                <span class="badge text-bg-danger position-absolute top-0 end-0">New</span>
-                                <div class="game-card-body card-body">
-                                    <center><i class="fa-solid fa-gopuram fa-4x game-card-icon"></i></center>
-                                    <center><h5 class="game-card-title card-title">Hanoi Tower</h5></center>
-                                    <center><p class="game-card-text">In quante mosse riesci a completare la torre di Hanoi?</p></center>
-                                </div>
-                            </div>
-                        </a>
-                    </div>
-
-                    <div class="col-sm-4">
-                        <a href = "word-memory.html" style="text-decoration: none; color: inherit;">
-                            <div class="card game-card shadow">
-                                <span class="badge text-bg-danger position-absolute top-0 end-0">New</span>
-                                <div class="game-card-body card-body">
-                                    <center><i class="fa-solid fa-spell-check fa-4x game-card-icon"></i></center>
-                                    <center><h5 class="game-card-title card-title">Word Memory</h5></center>
-                                    <center><p class="game-card-text">Riesci a ricordare queste parole?</p></center>
-                                </div>
-                            </div>
-                        </a>
-                    </div>
-
-                    <div class="col-sm-4">
-                        <a href="number-memory.html" style="text-decoration: none; color: inherit;">
-                            <div class="card game-card shadow">
-                                <span class="badge text-bg-danger position-absolute top-0 end-0">New</span>
-                                <div class="game-card-body card-body">
-                                    <center><i class="fa-solid fa-arrow-up-9-1 fa-4x game-card-icon"></i></center>
-                                    <center><h5 class="game-card-title card-title">Number Memory</h5></center>
-                                    <center><p class="game-card-text">Riesci a ricordare questi numeri?</p></center>
-                                </div>
-                            </div>
-                        </a>
-                    </div>
-                </div>
-
-                <div class="row">
-                    <div class="col-sm-4">
-                        <a href="guess-the-flag.html" style="text-decoration: none; color: inherit;">
-                            <div class="card game-card shadow">
-                                <span class="badge text-bg-danger position-absolute top-0 end-0">New</span>
-                                <div class="game-card-body card-body">
-                                    <center><i class="fa-solid fa-flag fa-4x game-card-icon"></i></center>
-                                    <center><h5 class="game-card-title card-title">Guess The Flag</h5></center>
-                                    <center><p class="game-card-text">Riesci a indovinare il paese dalla bandiera?</p></center>
-                                </div>
-                            </div>
-                        </a>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </main>
-    <footer>
-        <center>&copy; Simone Potenza. Tutti i diritti riservati.</center>
-    </footer>
-</body>
+       
