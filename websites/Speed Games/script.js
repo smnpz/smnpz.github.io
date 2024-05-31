@@ -121,7 +121,7 @@ function startGame_reactionTime() {
             color_section.style.backgroundColor = "#CE2636";
             head.innerHTML = `<i class="fa-solid fa-hourglass fa-8x main-icon"></i>`;
             name.innerHTML = `Aspetta il verde...`;
-
+            
             setTimeout(function func() {
                 color_section.style.backgroundColor = "#4BDB6A";
                 name.innerHTML = `Clicca sullo schermo!`;
@@ -132,6 +132,7 @@ function startGame_reactionTime() {
                     var fine = new Date();
                     var time = fine.getTime() - inizio.getTime();
 
+                    let colore = color_section.style.backgroundColor;
                     color_section.style.backgroundColor = "#2B87D1";
                     name.innerHTML = `Hai impiegato <span class = "yellow-text">${time}</span> millisecondi.`;
                     info.innerHTML = ""
@@ -379,7 +380,7 @@ function startGame_wordMemory() {
                 <div id="word-section" style="padding-top: 200px;">
                     <center><span id="game-score" class="game-score">Parola n. <span id="game-lvl" class="game-score">1</span> di ${parole_totali.length}<br><br></span></center>
                     <center><span id="word" class="word">${parole_totali[0]}</span></center><br>
-                    <center><span id="word-check" class="word-check">Hai giq' visto questa parola?</span></center>
+                    <center><span id="word-check" class="word-check">Hai gia' visto questa parola?</span></center>
                     <center><button id="word-seen" class="btn word-button btn-success">Si</button> <button id="word-new" class="btn word-button btn-warning">No</button></center>
                 </div>
 
