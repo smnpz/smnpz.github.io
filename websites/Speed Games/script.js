@@ -24,6 +24,9 @@ function startGame(game) {
         case 8:
             startGame_mathSolver();
             break;
+        case 9:
+            startGame_colorMatch();
+            break;
     }
 }
 
@@ -425,7 +428,7 @@ function startGame_wordMemory() {
                 if(counter == 31) {
                     section.innerHTML = `<div id="main-section" class="main-content">
                             <center><span id="game-head"><i class="fa-solid fa-spell-check fa-8x main-icon"></i></span></center>
-                            <center><span id="game-name" class="main-text">Hai totalizzato <span class="yellow-text">${points}</span> punti!</span></center>
+                            <center><span id="game-name" class="main-text">Hai totalizzato <span class="yellow-text">${points}</span>/30 punti!</span></center>
                             <center><span id="game-button"><a href = "word-memory.html"><button class = "btn main-button">Gioca di nuovo!</button></a></span></center>
                         </div>`;
                 }
@@ -535,6 +538,122 @@ function startGame_mathSolver() {
         }
     }, 1000);
 }
+
+var color_score = 0;
+
+function startGame_colorMatch() {
+    let section = document.getElementById('game-section');
+    section.onclick = null;
+    section.innerHTML = `<div id="main-section" class="main-content">
+        <center><span id="game-head"><i class="fa-solid fa-palette fa-8x main-icon"></i></span></center>
+        <center><span id="game-name" class="main-text">Il gioco inizia tra... <span class="yellow-text">3</span></span></center>
+        <center><span id="game-info" class="main-subtext">Rimani concentrato...</span></center>
+    </div>`;
+
+    let name = document.getElementById('game-name');
+    let seconds = 3;
+    let head = document.getElementById('game-head');
+
+    const countdownInterval = setInterval(function() {
+        seconds--;
+        name.innerHTML = `Il gioco inizia tra... <span class="yellow-text">${seconds}</span>`;
+        if (seconds <= 0) {
+            clearInterval(countdownInterval);
+            name.innerHTML = "";
+
+            section.innerHTML = `<div id="main-section" class="main-content">
+                <center><span id="game-head" class="main-head"></span></center>
+                <center><span id="game-name" class="main-text"><span class="yellow-text"></span></span></center>
+                
+                <div id="word-section" style="padding-top: 200px;">
+                    <center><span id="game-score" class="game-score"><br></span></center>
+                    <center><span id="word" class="word"></span></center><br>
+                    <center><span id="word-check" class="word-check">Seleziona il colore indicato dalla parola</span></center>
+                    <center>
+                        <div class="container">
+                            <div class="color-buttons">
+                                <button id="btn-color-red" class="color-button color1"></button>
+                                <button id="btn-color-green" class="color-button color2"></button>
+                                <button id="btn-color-blue" class="color-button color3"></button>
+                                <button id="btn-color-yellow" class="color-button color4"></button>
+                                <button id="btn-color-orange" class="color-button color5"></button>
+                                <button id="btn-color-purple" class="color-button color6"></button>
+                            </div>
+                        </div>
+                    </center>
+                </div>
+
+                <center><span id="game-info" class="main-subtext"></span></center>
+                <center><span id="game-button"></span></center>
+            </div>`;
+
+            let score = document.getElementById('game-score');
+            let word = document.getElementById('word');
+            let parole = ["Rosso", "Verde", "Blu", "Giallo", "Arancione", "Viola"];
+            let color = ["red", "green", "blue", "yellow", "orange", "purple"];
+            let sec_rimanenti = 30;
+
+            score.innerHTML = `Ti rimangono <span class="yellow-text">${sec_rimanenti}</span> secondi.`;
+
+            updateWordAndButtons(parole, color, word);
+
+            const gameInterval = setInterval(function() {
+                sec_rimanenti--;
+                score.innerHTML = `Ti rimangono <span class="yellow-text">${sec_rimanenti}</span> secondi.`;
+
+                if (sec_rimanenti <= 0) {
+                    clearInterval(gameInterval);
+
+                    let resultMessage;
+                    if (color_score <= 10) resultMessage = "Mi prendi in giro!? Riproviamoci...";
+                    else if (color_score <= 15) resultMessage = "Mhh, puoi fare di meglio...";
+                    else if (color_score <= 30) resultMessage = "Wow, sei stato fortissimo!";
+                    else resultMessage = "Sei il maestro dei colori!";
+
+                    section.innerHTML = `<div id="main-section" class="main-content">
+                        <center><span id="game-head"><i class="fa-solid fa-palette fa-8x main-icon"></i></span></center>
+                        <center><span id="game-name" class="main-text">Hai totalizzato <span class = "yellow-text">${color_score}</span> punti!</span></center>
+                        <center><span id="game-info" class="main-subtext">${resultMessage}</span></center>
+                        <center><a href="color-match.html"><button class="btn main-button">Gioca di nuovo!</button></a></center>
+                    </div>`;
+                }
+            }, 1000);
+        }
+    }, 1000);
+}
+
+function numero_casuale(min, max) {
+    return Math.floor(Math.random() * (max - min + 1)) + min;
+}
+
+function checkColor(colore_corretto, colore_scelto) {
+    return function() {
+        if (colore_corretto === colore_scelto) color_score++;
+
+        let word = document.getElementById('word');
+        let parole = ["Rosso", "Verde", "Blu", "Giallo", "Arancione", "Viola"];
+        let color = ["red", "green", "blue", "yellow", "orange", "purple"];
+
+        updateWordAndButtons(parole, color, word);
+    };
+}
+
+function updateWordAndButtons(parole, color, word) {
+    let index = numero_casuale(0, parole.length - 1);
+    word.innerText = parole[index];
+    let correctColor = color[index];
+    word.style.color = color[numero_casuale(0, color.length - 1)];
+
+    document.getElementById('btn-color-red').onclick = checkColor(correctColor, 'red');
+    document.getElementById('btn-color-green').onclick = checkColor(correctColor, 'green');
+    document.getElementById('btn-color-blue').onclick = checkColor(correctColor, 'blue');
+    document.getElementById('btn-color-yellow').onclick = checkColor(correctColor, 'yellow');
+    document.getElementById('btn-color-orange').onclick = checkColor(correctColor, 'orange');
+    document.getElementById('btn-color-purple').onclick = checkColor(correctColor, 'purple');
+}
+
+
+/***************************************************************************************************************************************/
 
 /********************************************************* MATH SOLVER ***********************************************************************/
 
