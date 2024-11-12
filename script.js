@@ -1,6 +1,7 @@
 function updateDynamicText() {
 
     var testi_dinamici = [
+        "Studente",
         "Informatico",
         "Grafico", 
         "Developer", 
@@ -11,6 +12,7 @@ function updateDynamicText() {
     ];
 
     var testi_dinamici_en = [
+        "Student",
         "Computer scientist",
         "Graphic", 
         "Developer", 
@@ -35,6 +37,7 @@ function updateDynamicText() {
 function updateDynamicText_en() {
 
     var testi_dinamici_en = [
+        "Student",
         "Computer scientist",
         "Graphic", 
         "Developer", 

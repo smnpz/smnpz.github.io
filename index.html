@@ -4,6 +4,7 @@
     <title>Simone Potenza • Portfolio</title>
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">
+    <script src="https://kit.fontawesome.com/85f193a366.js" crossorigin="anonymous"></script>
     <link rel="stylesheet" href="style.css" id = "tema-css">
     <link rel="icon" href="images/favicon.png">
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossorigin="anonymous"></script>
@@ -11,20 +12,20 @@
 <body>
   <header>
     <div id="sidebar">
-      <center>Simone Potenza<br>Portfolio</center>
-      <img src="images/Simone.jpg" alt="Profile Picture">
+      <center><b>Simone Potenza</b></center>
+      <img src="images/selfie.jpg" alt="Profile Picture">
       <br><br>
       <ul>
           <a href="#home" style="text-decoration: none; color: white;"><li><i class="fas fa-home"></i> Home</li></a>
           <a href="#about" style="text-decoration: none; color: white;"><li><i class="fas fa-user"></i> Chi sono?</li></a>
           <a href="#projects" style="text-decoration: none; color: white;"><li><i class="fas fa-project-diagram"></i> Progetti</li></a>
-          <a href="#skills" style="text-decoration: none; color: white;"><li><i class="fas fa-cogs"></i> Skills</li></a>
+          <a href="#skills" style="text-decoration: none; color: white;"><li><i class="fas fa-cogs"></i> Competenze</li></a>
           <a href="#education" style="text-decoration: none; color: white;"><li><i class="fas fa-graduation-cap"></i> Formazione</li></a>
-          <a href="#contacts" style="text-decoration: none; color: white;"><li><i class="fas fa-envelope"></i> Contatti</li></a>
+          <a href="#contacts" style="text-decoration: none; color: white;"><li><i class="fa-solid fa-address-book"></i> Contatti</li></a>
           <a href="#resume" style="text-decoration: none; color: white;"><li><i class="fas fa-file-alt"></i> Riassunto & CV</li></a>
       </ul>
-      <br><br>
-      <p>&copy; Simone Potenza 2024</p>
+      <br>
+      <center><p>&copy; Simone Potenza</p></center>
     </div>
     <div class="container">
       <div class="row">
@@ -32,8 +33,7 @@
         <div class="col-sm-1 top-icon"><a href="https://wa.me/+393207085977"><h2><i class="fab fa-whatsapp teal"></i></h2></a></div>
         <div class="col-sm-1 top-icon"><a href="https://instagram.com/smn.pz"><h2><i class="fab fa-instagram teal"></i></h2></a></div>
         <div class="col-sm-1 top-icon"><a href="https:/github.com/smnpz"><h2><i class="fab fa-github teal"></i></h2></a></div>
-        <div class="col-sm-1 top-icon"><a href="mailto:simone06potenza@gmail.com"><h2><i class="fa fa-at teal"></i></h2></a></div>
-        <div class="col-sm-1 top-icon"><a href="tel:+393207085977"><h2><i class="fa fa-phone teal"></i></h2></a></div>
+        <div class="col-sm-1 top-icon"><a href="mailto:simopot.dev@gmail.com"><h2><i class="fa fa-at teal"></i></h2></a></div>
         <div class="col-sm-2"></div>
         <div class="col-sm-2 top-icon">
           <div class="dropdown">
@@ -65,54 +65,36 @@
         <h1 class="title">Ciao, sono <span class="teal">Simone Potenza</span>!</h1>
         <h1 class="sub-title">Un <span id="dynamic-text" class="teal"></span>.</h1>
 
-        <p class="home-desc"><br>Mi chiamo <span class="teal">Simone Potenza</span>, uno studente di informatica in continua formazione personale.<br><br>Questo sito è il mio <span class="teal">Portfolio</span>, conosciuto anche come <span class="teal">Devfolio</span>. <br>Il suo scopo è quello di raccogliere lo storico della mia carriera da sviluppatore, al fine di rendere pubblici tutti <a href="#projects">i miei progetti</a> e traguardi. <br><br>Per qualsisi domanda, non esitare a <a href="#contacts">contattarmi</a>!</p>
+        <p class="home-desc">
+          <br> 
+          Mi chiamo <span class="teal">Simone Potenza</span> e sono uno studente di informatica con una forte passione per l'apprendimento continuo e la crescita professionale. <br><br>
+          Questo sito rappresenta il mio <span class="teal">Portfolio</span>, anche noto come <span class="teal">Devfolio</span>, una piattaforma creata per documentare e condividere il percorso della mia carriera da sviluppatore. <br>
+          Qui potrai esplorare <a href="#projects">i miei progetti</a> e i traguardi raggiunti fino ad oggi.<br><br>
+          Per qualsiasi domanda o informazione aggiuntiva, non esitare a <a href="#contacts">contattarmi</a>!
+        </p>        
         
         <!-- Sezione Su di me #about -->
         <div id="about">
-            <h1 class="title"><span class="teal"><i class="fas fa-user"></i> Chi sono?</span> Mi presento</h1>
-                <br>
-                <table class="table table-primary table-striped">
-                  <thead>
-                    <tr>
-                      <th scope="col">Dato</th>
-                      <th scope="col">Informazione</th>
-                    </tr>
-                  </thead>
-                  <tbody>
-                    <tr>
-                      <td>Nome</td>
-                      <td>Simone</td>
-                    </tr>
-                    <tr>
-                      <td>Cognome</td>
-                      <td>Potenza</td>
-                    </tr>
-                    <tr>
-                      <td>Nascita</td>
-                      <td>12 ago 2006 (17 anni)</td>
-                    </tr>
-                    <tr>
-                      <td>Residenza</td>
-                      <td>Potenza, Basilicata (Italia)</td>
-                    </tr>
-                    <tr>
-                      <td>Cellulare</td>
-                      <td>+39 320 708 5977</td>
-                    </tr>
-                    <tr>
-                      <td>Email</td>
-                      <td>simone06potenza@gmail.com</td>
-                    </tr>
-                  </tbody>
-                </table>
-                <h5 class="teal">Presentazione</h5>
-                <p>Ciao! Sono Simone Potenza, un giovane appassionato di informatica con una passione per la programmazione che risale a ben cinque anni fa. Durante questo periodo, ho lavorato su una varietà di progetti, mirando spesso a risolvere problemi comuni e migliorare la vita quotidiana attraverso soluzioni informatiche.</p>
-                <p>La mia predilezione va al linguaggio di programmazione Python, apprezzandone la semplicità e la rapidità di utilizzo. Ho esperienza sia nel lavoro individuale che di squadra, mostrando flessibilità e adattabilità in ogni situazione.</p>
-                <p>La mia passione per la programmazione è alimentata dalla soddisfazione di vedere prendere vita i progetti mentre scrivo il codice. Partecipo regolarmente alle Olimpiadi di Informatica e alle competizioni di Cybersecurity, dove affino le mie abilità e imparo costantemente nuovi approcci e tecniche.</p>
-                <h5 class="teal">Obiettivi futuri</h5>
-                <p>Per il mio futuro accademico, ho intenzione di intraprendere gli studi in Ingegneria Informatica presso l'Università di Torino o quella di Bologna. Ambisco a diventare uno sviluppatore software o web, ma sono anche interessato all'ambito delle reti.</p>
-                <p>Pur non avendo ancora delineato progetti specifici o tecnologie da approfondire, sono entusiasta di esplorare nuove opportunità durante il mio percorso universitario e di contribuire al mondo dell'informatica con le mie competenze e la mia passione.</p>
-        </div>
+          <h1 class="title"><span class="teal"><i class="fas fa-user"></i> Chi sono?</span> Mi presento...</h1>
+          <br>
+          <h5 class="teal">Presentazione</h5>
+          <p>
+            Ciao! Sono Simone Potenza, un giovane appassionato di informatica con oltre cinque anni di esperienza nel campo della programmazione. Durante questo percorso, ho realizzato progetti orientati alla risoluzione di problemi concreti e al miglioramento della vita quotidiana tramite soluzioni tecnologiche.
+          </p>
+          <p>
+            Prediligo il linguaggio Python, per la sua semplicità e velocità d’uso, e ho esperienza sia nel lavoro individuale che in team, dimostrando flessibilità e adattabilità in diverse situazioni.
+          </p>
+          <p>
+            La mia passione per la programmazione nasce dalla soddisfazione di vedere i miei progetti prendere forma attraverso il codice. Partecipo regolarmente alle Olimpiadi di Informatica e a competizioni di Cybersecurity, occasioni che mi permettono di affinare le mie competenze e di acquisire nuove tecniche e approcci.
+          </p>
+          <h5 class="teal">Obiettivi futuri</h5>
+          <p>
+            Per il mio futuro accademico, intendo proseguire gli studi in Ingegneria Informatica presso l’Università di Torino o Bologna, con l’obiettivo di diventare uno sviluppatore software o web, mantenendo un forte interesse anche per il settore delle reti.
+          </p>
+          <p>
+            Sebbene non abbia ancora definito in modo specifico i progetti o le tecnologie su cui concentrarmi, sono entusiasta delle opportunità che mi attendono nel mio percorso universitario e desidero contribuire attivamente al mondo dell’informatica con le mie competenze e la mia passione.
+          </p>
+        </div>        
 
         <!-- Sezione Progetti #projects-->
 
@@ -126,9 +108,9 @@
                           Realizzato in Java <span class="badge text-bg-success">Online</span>
                         </div>
                         <div class="card-body">
-                          <h5 class="card-title">Controllo Input</h5>
+                          <h5 class="card-title"><b>Controllo input da Terminale</b></h5>
                           <p class="card-text">Una classe di Java che consente di limitare gli errori di input da tastiera.</p>
-                          <a href="https://github.com/smnpz/Java-Utilities" class="btn teal-bg">Vai su GitHub!</a>
+                          <a href="https://github.com/smnpz/Java-Utilities" class="btn teal-bg"><i class="fa-solid fa-circle-arrow-right"></i> Vai su GitHub!</a>
                         </div>
                     </div>
                 </div>
@@ -139,9 +121,9 @@
                           Realizzato in HTML <span class="badge text-bg-success">Online</span>
                         </div>
                         <div class="card-body">
-                          <h5 class="card-title">Speed Games</h5>
+                          <h5 class="card-title"><b>Speed Games</b></h5>
                           <p class="card-text">Un sito web che offre una serie di minigiochi divertenti e interattivi per testare la tua velocità e il tuo IQ!</p>
-                          <a href="websites/Speed Games/index.html" class="btn teal-bg">Vai al Sito Web!</a>
+                          <a href="websites/Speed Games/index.html" class="btn teal-bg"><i class="fa-solid fa-circle-arrow-right"></i> Vai al Sito Web!</a>
                         </div>
                     </div>
                 </div>
@@ -154,9 +136,9 @@
                           Realizzato in HTML <span class="badge text-bg-success">Online</span>
                         </div>
                         <div class="card-body">
-                          <h5 class="card-title">Cyber Security</h5>
+                          <h5 class="card-title"><b>Cyber Security</b></h5>
                           <p class="card-text">Un sito web che mette in guardia i lettori su alcuni errori che spesso possiamo commettere su internet.<br><br><br></p>
-                          <a href="websites/Sicurezza informatica/index.html" class="btn teal-bg">Vai al Sito Web!</a>
+                          <a href="websites/Sicurezza informatica/index.html" class="btn teal-bg"><i class="fa-solid fa-circle-arrow-right"></i> Vai al Sito Web!</a>
                         </div>
                     </div>
                 </div>
@@ -167,10 +149,10 @@
                         Realizzato in Java <span class="badge text-bg-dark">Beta privata</span>
                       </div>
                       <div class="card-body">
-                        <h5 class="card-title">Form Maker</h5>
+                        <h5 class="card-title"><b>Form Maker</b></h5>
                         <p class="card-text">Un'applicazione realizzata in Java che consente di creare e svolgere questionari. Tutti i questionari sono realizzabili gratuitamente e consentono di personalizzare al meglio ogni dettaglio.</p>
                         <!-- Pulsante per aprire il popup di errore -->
-                        <button type="button" class="btn teal-bg" data-bs-toggle="modal" data-bs-target="#errorModal">Vai su GitHub!</button>
+                        <button type="button" class="btn teal-bg" data-bs-toggle="modal" data-bs-target="#errorModal"><i class="fa-solid fa-circle-arrow-right"></i> Vai su GitHub!</button>
 
                         <!-- Modal del popup di errore -->
                         <div class="modal fade" id="errorModal" tabindex="-1" aria-labelledby="errorModalLabel" aria-hidden="true">
@@ -206,10 +188,10 @@
                         
                         <div class="row">
                           <div class="col-sm-6">
-                            <a href="https://www.youtube.com/watch?v=wDISil_1o-E&t=1s" class="btn teal-bg">Vai su YouTube!</a>
+                            <a href="https://www.youtube.com/watch?v=wDISil_1o-E&t=1s" class="btn teal-bg"><i class="fa-solid fa-circle-arrow-right"></i> Vai su YouTube!</a>
                           </div>
                           <div class="col-sm-6">
-                            <button type="button" class="btn teal-bg" data-bs-toggle="modal" data-bs-target="#anacronauta_info">Maggiori informazioni</button>
+                            <button type="button" class="btn teal-bg" data-bs-toggle="modal" data-bs-target="#anacronauta_info"><i class="fa-solid fa-circle-info"></i> Maggiori informazioni</button>
                           </div>
                           
                         </div>
@@ -281,7 +263,7 @@
         <!-- Sezione Skills #skills -->
 
         <div id = "skills">
-            <h1 class="title"><span class="teal"><i class="fas fa-cogs"></i> Skills</span> che possiedo</h1>
+            <h1 class="title"><span class="teal"><i class="fas fa-cogs"></i> Competenze</span></h1>
             <br>
 
             <div class="accordion" id="skills-sections">
@@ -295,17 +277,17 @@
                     <div class="accordion-body">
                       <p>Ecco le lingue che conosco con il relativo livello: </p>
 
-                      <p><b>Lingua Italiana</b></p>
-                      <div class="progress" role="progressbar" aria-label="Animated striped example" aria-valuenow="100" aria-valuemin="0" aria-valuemax="100">
-                        <div class="progress-bar progress-bar-striped progress-bar-animated" style="width: 100%"></div>
-                      </div>
-
-                      <br>
-                      
-                      <p><b>Lingua Inglese</b></p>
-                      <div class="progress" role="progressbar" aria-label="Animated striped example" aria-valuenow="100" aria-valuemin="0" aria-valuemax="100">
-                        <div class="progress-bar progress-bar-striped progress-bar-animated" style="width: 70%"></div>
-                      </div>
+                        <p><b>Italiano - Madrelingua</b></p>
+                        <div class="progress" role="progressbar" aria-label="Animated striped example" aria-valuenow="100" aria-valuemin="0" aria-valuemax="100">
+                          <div class="progress-bar progress-bar-striped" style="width: 100%"></div>
+                        </div>
+  
+                        <br>
+                        
+                        <p><b>English - Corso B2 in corso...</b></p>
+                        <div class="progress" role="progressbar" aria-label="Animated striped example" aria-valuenow="100" aria-valuemin="0" aria-valuemax="100">
+                          <div class="progress-bar progress-bar-striped" style="width: 70%"></div>
+                        </div>
 
                     </div>
                   </div>
@@ -323,35 +305,42 @@
 
                         <p><b>C</b></p>
                         <div class="progress" role="progressbar" aria-label="Animated striped example" aria-valuenow="100" aria-valuemin="0" aria-valuemax="100">
-                          <div class="progress-bar progress-bar-striped progress-bar-animated" style="width: 50%"></div>
+                          <div class="progress-bar progress-bar-striped" style="width: 50%"></div>
                         </div>
   
                         <br>
 
                         <p><b>C++</b></p>
                         <div class="progress" role="progressbar" aria-label="Animated striped example" aria-valuenow="100" aria-valuemin="0" aria-valuemax="100">
-                          <div class="progress-bar progress-bar-striped progress-bar-animated" style="width: 70%"></div>
+                          <div class="progress-bar progress-bar-striped" style="width: 70%"></div>
                         </div>
   
                         <br>
 
                         <p><b>C#</b></p>
                         <div class="progress" role="progressbar" aria-label="Animated striped example" aria-valuenow="100" aria-valuemin="0" aria-valuemax="100">
-                          <div class="progress-bar progress-bar-striped progress-bar-animated" style="width: 30%"></div>
+                          <div class="progress-bar progress-bar-striped" style="width: 30%"></div>
                         </div>
   
                         <br>
                         
                         <p><b>Java</b></p>
                         <div class="progress" role="progressbar" aria-label="Animated striped example" aria-valuenow="100" aria-valuemin="0" aria-valuemax="100">
-                          <div class="progress-bar progress-bar-striped progress-bar-animated" style="width: 80%"></div>
+                          <div class="progress-bar progress-bar-striped" style="width: 80%"></div>
                         </div>
 
                         <br>
 
                         <p><b>Python</b></p>
                         <div class="progress" role="progressbar" aria-label="Animated striped example" aria-valuenow="100" aria-valuemin="0" aria-valuemax="100">
-                          <div class="progress-bar progress-bar-striped progress-bar-animated" style="width: 85%"></div>
+                          <div class="progress-bar progress-bar-striped" style="width: 85%"></div>
+                        </div>
+
+                        <br>
+
+                        <p><b>Kotlin</b></p>
+                        <div class="progress" role="progressbar" aria-label="Animated striped example" aria-valuenow="100" aria-valuemin="0" aria-valuemax="100">
+                          <div class="progress-bar progress-bar-striped" style="width: 70%"></div>
                         </div>
                     </div>
                   </div>
@@ -369,21 +358,21 @@
 
                         <p><b>HTML 5</b></p>
                         <div class="progress" role="progressbar" aria-label="Animated striped example" aria-valuenow="100" aria-valuemin="0" aria-valuemax="100">
-                          <div class="progress-bar progress-bar-striped progress-bar-animated" style="width: 85%"></div>
+                          <div class="progress-bar progress-bar-striped" style="width: 85%"></div>
                         </div>
   
                         <br>
                         
                         <p><b>CSS 3</b></p>
                         <div class="progress" role="progressbar" aria-label="Animated striped example" aria-valuenow="100" aria-valuemin="0" aria-valuemax="100">
-                          <div class="progress-bar progress-bar-striped progress-bar-animated" style="width: 80%"></div>
+                          <div class="progress-bar progress-bar-striped" style="width: 80%"></div>
                         </div>
 
                         <br>
 
                         <p><b>JavaScript</b></p>
                         <div class="progress" role="progressbar" aria-label="Animated striped example" aria-valuenow="100" aria-valuemin="0" aria-valuemax="100">
-                          <div class="progress-bar progress-bar-striped progress-bar-animated" style="width: 80%"></div>
+                          <div class="progress-bar progress-bar-striped" style="width: 80%"></div>
                         </div>
                     </div>
                   </div>
@@ -399,23 +388,16 @@
                       <div class="accordion-body">
                           <p>Ecco i database che conosco con il relativo livello: </p>
   
-                          <p><b>SQL</b></p>
+                          <p><b>SQLite</b></p>
                           <div class="progress" role="progressbar" aria-label="Animated striped example" aria-valuenow="100" aria-valuemin="0" aria-valuemax="100">
-                            <div class="progress-bar progress-bar-striped progress-bar-animated" style="width: 80%"></div>
-                          </div>
-    
-                          <br>
-                          
-                          <p><b>MySQL</b></p>
-                          <div class="progress" role="progressbar" aria-label="Animated striped example" aria-valuenow="100" aria-valuemin="0" aria-valuemax="100">
-                            <div class="progress-bar progress-bar-striped progress-bar-animated" style="width: 90%"></div>
+                            <div class="progress-bar progress-bar-striped" style="width: 90%"></div>
                           </div>
   
                           <br>
   
                           <p><b>Microsoft Access</b></p>
                           <div class="progress" role="progressbar" aria-label="Animated striped example" aria-valuenow="100" aria-valuemin="0" aria-valuemax="100">
-                            <div class="progress-bar progress-bar-striped progress-bar-animated" style="width: 95%"></div>
+                            <div class="progress-bar progress-bar-striped" style="width: 95%"></div>
                           </div>
                       </div>
                     </div>
@@ -429,18 +411,23 @@
                     </h2>
                     <div id="panelsStayOpen-collapseFive" class="accordion-collapse collapse">
                       <div class="accordion-body">
-                          <p>Ecco i database che conosco con il relativo livello: </p>
+                          <p>Ecco i sistemi operativi che conosco con il relativo livello: </p>
   
                           <p><b>Windows</b></p>
                           <div class="progress" role="progressbar" aria-label="Animated striped example" aria-valuenow="100" aria-valuemin="0" aria-valuemax="100">
-                            <div class="progress-bar progress-bar-striped progress-bar-animated" style="width: 80%"></div>
+                            <div class="progress-bar progress-bar-striped" style="width: 80%"></div>
                           </div>
     
                           <br>
                           
                           <p><b>Android</b></p>
                           <div class="progress" role="progressbar" aria-label="Animated striped example" aria-valuenow="100" aria-valuemin="0" aria-valuemax="100">
-                            <div class="progress-bar progress-bar-striped progress-bar-animated" style="width: 80%"></div>
+                            <div class="progress-bar progress-bar-striped" style="width: 80%"></div>
+                          </div>
+
+                          <p><b>Linux</b></p>
+                          <div class="progress" role="progressbar" aria-label="Animated striped example" aria-valuenow="100" aria-valuemin="0" aria-valuemax="100">
+                            <div class="progress-bar progress-bar-striped" style="width: 50%"></div>
                           </div>
 
                       </div>
@@ -459,14 +446,14 @@
   
                           <p><b>Discord Bot Developer</b></p>
                           <div class="progress" role="progressbar" aria-label="Animated striped example" aria-valuenow="100" aria-valuemin="0" aria-valuemax="100">
-                            <div class="progress-bar progress-bar-striped progress-bar-animated" style="width: 30%"></div>
+                            <div class="progress-bar progress-bar-striped" style="width: 30%"></div>
                           </div>
     
                           <br>
                           
                           <p><b>Telegram Bot Developer</b></p>
                           <div class="progress" role="progressbar" aria-label="Animated striped example" aria-valuenow="100" aria-valuemin="0" aria-valuemax="100">
-                            <div class="progress-bar progress-bar-striped progress-bar-animated" style="width: 100%"></div>
+                            <div class="progress-bar progress-bar-striped" style="width: 100%"></div>
                           </div>
                       </div>
                     </div>
@@ -498,10 +485,11 @@
                   <i class="fa fa-certificate"></i>
                 </span>
 
-                <h5 class="fw-bold">Certificazione CISCO CCNA</h5>
+                <h5 class="fw-bold">Certificazione CISCO CCNA 1</h5>
                 <p class="color-theme mb-2 fw-bold">Settembre 2023 - Maggio 2024</p>
                 <p class="color-theme">
-                  Ho frequentando un corso formativo CISCO di "Sistemi e Reti" per ottenere la certificazione CCNA1 di Cisco.
+                  Ho frequentando un corso formativo CISCO per ottenere la certificazione CCNA1 di Cisco.<br>
+                  <i class="fa-regular fa-circle-check" style="color: teal;"></i></i> Per visualizzare il <b>badge digitale della certificazione</b>, <a href="https://www.credly.com/badges/3db480be-c5cc-4150-9fef-65b8e289c75a/public_url">clicca qui</a>.
                 </p>
               </li>
 
@@ -513,7 +501,8 @@
                 <h5 class="fw-bold">Certificazione CISCO IT ESSENTIALS</h5>
                 <p class="color-theme mb-2 fw-bold">Settembre 2022 - Maggio 20204</p>
                 <p class="color-theme">
-                  Ho frequentando un corso formativo per ottenere la certificazione IT ESSENTIALS di Cisco.
+                  Ho frequentando un corso formativo per ottenere la certificazione IT ESSENTIALS di Cisco.<br>
+                  <i class="fa-regular fa-circle-check" style="color: teal;"></i></i> Per visualizzare il <b>badge digitale della certificazione</b>, <a href="https://www.credly.com/badges/a577dc40-404b-43c6-acce-28560b4ed82b">clicca qui</a>.
                 </p>
               </li>
 
@@ -572,7 +561,7 @@
         <!-- Sezione Contatti #contacts -->
 
         <div id="contacts">
-          <h1 class="title"><span class="teal"><i class="fas fa-envelope"></i> Contatti</span> e Social Networks</h1>
+          <h1 class="title"><span class="teal"><i class="fa-solid fa-address-book"></i> Contatti</span></h1>
           <br>
 
           <div class="row">
@@ -664,7 +653,7 @@
                   <h5 class="card-title">Curriculum Europass 2024</h5>
                   <p class="card-text">Premi il bottone sottostante per scaricare il mio attuale curriculum.<br>Il CV è stato realizzato utilizzando <a href="https://europa.eu">Europass</a>, un sito web dedicato.<br><br><br></p>
                   <a href="cv.pdf" download>
-                    <button class="btn teal-bg">Scarica CV</button>
+                    <button class="btn teal-bg"><i class="fa-solid fa-circle-arrow-down"></i> Download</button>
                   </a>
                 </div>
               </div>
@@ -674,9 +663,5 @@
     </div>
     <script src="script.js"></script>
   </main>
-  <footer>
-    <center><p>Per ora è tutto. Grazie per aver visitato il mio website!</p></center>
-    <center><p>&copy; Simone Potenza</p></center>
-  </footer>
 </body>
 </html>

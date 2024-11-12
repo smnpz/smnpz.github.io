@@ -2,7 +2,6 @@ body {
     background-color:aliceblue;
 }
 
-
 main {
     margin-left: 17%;
     font-family: Arial, sans-serif;
@@ -13,7 +12,7 @@ main {
 
 footer {
     margin-left: 17%;
-    margin-bottom: auto;
+    margin-bottom: 0px;
     color: white;
     background-color: teal;
     font-family: Arial, sans-serif;
@@ -46,8 +45,8 @@ a {
 
 #sidebar img {
     padding-top: 30px;
-    width: 170px;
-    height: 160px;
+    width: 150px;
+    height: 175px;
     border-radius: 50%;
 }
 
@@ -105,7 +104,8 @@ a {
 /*Sezione ABOUT*/
 
 #about {
-    padding-top: 200px;
+    padding-top: 60px;
+    text-align: justify;
 }
 
 .table-font {
@@ -164,4 +164,10 @@ a {
 
 #resume {
     padding-top: 50px;
+}
+
+/*PROGRESS BAR*/
+
+.progress-bar {
+    background-color: teal;
 }
