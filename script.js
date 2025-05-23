@@ -1,9 +1,7 @@
 function updateDynamicText() {
 
     var testi_dinamici = [
-        "Apprendista",
-        "Informatico",
-        "Grafico", 
+        "Informatico", 
         "Developer", 
         "Pythonista",
         "Software Developer",
